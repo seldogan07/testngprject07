@@ -11,7 +11,7 @@ public class TC_01 {
 
     @Test
     public void addNewProductMenuTest(){
-        reMethods.logIn();
+        reMethods.signIn();
     }
 
 }
