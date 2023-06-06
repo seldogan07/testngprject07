@@ -23,7 +23,7 @@ public class PearlyMarketHomePage {
     public WebElement passwordBox;
 
     @FindBy(xpath = "//button[@name='login']")
-    public WebElement loginButonu;
+    public WebElement loginButton;
 
 
 }
