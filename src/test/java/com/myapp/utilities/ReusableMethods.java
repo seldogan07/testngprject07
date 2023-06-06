@@ -12,7 +12,7 @@ public class ReusableMethods {
 
     PearlyMarketHomePage homePage = new PearlyMarketHomePage();
     public void logIn(){
-        System ConfigReader = null;
+        // System ConfigReader = null;
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         homePage.signInButton.click();
         homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
