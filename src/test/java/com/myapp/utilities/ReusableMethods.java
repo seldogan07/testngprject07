@@ -17,7 +17,7 @@ public class ReusableMethods {
         homePage.signInButton.click();
         homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
         homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
-        homePage.loginButonu.click();
+        homePage.loginButton.click();
     }
 
     public static void clickWithTimeOut(WebElement element, int timeout) {
