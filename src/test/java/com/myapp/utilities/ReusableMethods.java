@@ -11,13 +11,13 @@ import static org.testng.AssertJUnit.*;
 public class ReusableMethods {
 
     PearlyMarketHomePage homePage = new PearlyMarketHomePage();
-    public void logIn(){
+    public void signIn(){
         // System ConfigReader = null;
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
-        homePage.signInButton.click();
+        homePage.homepageSignInButton.click();
         homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
         homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
-        homePage.loginButton.click();
+        homePage.signinPageSigninButton.click();
     }
 
     public static void clickWithTimeOut(WebElement element, int timeout) {
