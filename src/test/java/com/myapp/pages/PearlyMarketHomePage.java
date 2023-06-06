@@ -15,4 +15,15 @@ public class PearlyMarketHomePage {
 
     @FindBy(xpath = "//span[text()='Sign In']")
     public WebElement signInButton;
+
+    @FindBy(xpath = "(//input[@type='text'])[1]")
+    public WebElement usernameBox;
+
+    @FindBy(id = "password")
+    public WebElement passwordBox;
+
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement loginButonu;
+
+
 }
