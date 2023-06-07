@@ -26,5 +26,26 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//option[@value='external']")
     public WebElement dropdownExternalProductElement;
 
+    @FindBy(xpath="//select[@id='product_type']")
+    public WebElement simpleProductButton;
+
+    @FindBy(xpath="//input[@id='is_virtual']")
+    public WebElement virtualBox;
+
+    @FindBy(xpath="//input[@id='is_downloadable']")
+    public WebElement downloadableBox;
+
+    @FindBy(xpath="//input[@id='regular_price']")
+    public WebElement priceBox;
+
+    @FindBy(xpath="//input[@id='sale_price']")
+    public WebElement salePriceBox;
+
+    @FindBy(xpath="//input[@id='pro_title']")
+    public WebElement productTitleBox;
+
+    @FindBy(xpath="//input[@data-super_parent='226']")
+    public WebElement kitchenButton;
+
 
 }
