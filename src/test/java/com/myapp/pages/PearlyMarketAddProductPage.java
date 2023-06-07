@@ -7,23 +7,24 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PearlyMarketAddProductPage {
 
-    public PearlyMarketAddProductPage () {
+    public PearlyMarketAddProductPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    // @FindBy(xpath = "//a//span[.='Register']")
-    // public WebElement registerButton;
-    @FindBy(xpath="//span[@class='wcfm_sub_menu_items wcfm_sub_menu_items_product_manage moz_class']")
-    public WebElement productsAddNewButton;
+    @FindBy(xpath="//select[@id='product_type']")
+    public WebElement dropdownProductTypeElement;
 
+    @FindBy(xpath="//option[@value='simple']")
+    public WebElement dropdownSimpleProductElement;
 
+    @FindBy(xpath="//option[@value='variable']")
+    public WebElement dropdownVariableProductElement;
 
+    @FindBy(xpath="//option[@value='grouped']")
+    public WebElement dropdownGroupedProductElement;
 
-
-
-
-
-
+    @FindBy(xpath="//option[@value='external']")
+    public WebElement dropdownExternalProductElement;
 
 
 }
