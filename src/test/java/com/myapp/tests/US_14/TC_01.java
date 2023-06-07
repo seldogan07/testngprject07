@@ -15,6 +15,7 @@ public class TC_01 {
     @Test
     public void addNewProductMenuTest(){
         reMethods.signIn();
+
         reMethods.scrollPageEndActions();
         reMethods.waitForVisibility(pmHomePage.myAccountButton, 11);
         pmHomePage.myAccountButton.click();
@@ -28,7 +29,7 @@ public class TC_01 {
         Assert.assertTrue(pmAddProductPage.dropdownVariableProductElement.isDisplayed());
         Assert.assertTrue(pmAddProductPage.dropdownGroupedProductElement.isDisplayed());
         Assert.assertTrue(pmAddProductPage.dropdownExternalProductElement.isDisplayed());
-
+      
     }
 
 }

@@ -38,7 +38,4 @@ public class PearlyMarketHomePage {
     public WebElement productsAddnewElement;
 
 
-
-
-
 }
