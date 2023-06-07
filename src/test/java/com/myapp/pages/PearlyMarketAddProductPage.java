@@ -26,5 +26,50 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//option[@value='external']")
     public WebElement dropdownExternalProductElement;
 
+    @FindBy(xpath="//select[@id='product_type']")
+    public WebElement simpleProductButton;
+
+    @FindBy(xpath="//input[@id='is_virtual']")
+    public WebElement virtualBox;
+
+    @FindBy(xpath="//input[@id='is_downloadable']")
+    public WebElement downloadableBox;
+
+    @FindBy(xpath="//input[@id='regular_price']")
+    public WebElement priceBox;
+
+    @FindBy(xpath="//input[@id='sale_price']")
+    public WebElement salePriceBox;
+
+    @FindBy(xpath="//input[@id='pro_title']")
+    public WebElement productTitleBox;
+
+    @FindBy(xpath="//input[@data-super_parent='226']")
+    public WebElement kitchenButton;
+
+    @FindBy(xpath="//img[@id='gallery_img_gimage_0_display']")
+    public WebElement galaryImageBox;
+
+    @FindBy(xpath="//button[@id='__wp-uploader-id-1']")
+    public WebElement addToGalarySelectFileButton;
+
+    @FindBy(xpath="//li[@aria-label='Stool']")
+    public WebElement addToGalaryStoolImage;
+
+    @FindBy(xpath="(//div[@class='attachment-preview js--select-attachment type-image subtype-png portrait'])[2]")
+    public WebElement chooseImageStoolImage;
+
+    @FindBy(xpath="//button[@class='button media-button button-primary button-large media-button-select']")
+    public WebElement addToGalaryButton;
+
+    @FindBy(xpath="//img[@id='featured_img_display']")
+    public WebElement featuredImageBox;
+
+    @FindBy(xpath="//button[@id='menu-item-browse']")
+    public WebElement mediaLibrarySection;
+
+    @FindBy(xpath="(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
+    public WebElement chooseImageSelectButton;
+
 
 }

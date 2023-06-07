@@ -1,8 +1,11 @@
 package com.myapp.utilities;
+import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -263,8 +266,8 @@ public class ReusableMethods {
     public static void scrollDownActions() {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
-    }    
-        //    ACTIONS_SCROLL_PAGE_END
+    }
+    //    ACTIONS_SCROLL_PAGE_END
     public static void scrollPageEndActions() {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         //Scroll down till the bottom of the page
@@ -294,5 +297,22 @@ public class ReusableMethods {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).dragAndDropBy(source,x,y).perform();
     }
-}
 
+    //   Explicit Wait
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    //    SCROLL_INTO_VIEW - This will scroll the page till the element is found
+    public static void scrollIntoView(WebElement Element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        //Scroll the page till the element is found
+        js.executeScript("arguments[0].scrollIntoView();", Element);
+        new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
+    }
+
+
+
+
+}
