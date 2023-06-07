@@ -1,4 +1,5 @@
 package com.myapp.utilities;
+import com.myapp.pages.PearlyMarketHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -8,6 +9,17 @@ import java.util.Random;
 import static org.testng.AssertJUnit.*;
 
 public class ReusableMethods {
+
+    PearlyMarketHomePage homePage = new PearlyMarketHomePage();
+    public void signIn(){
+        // System ConfigReader = null;
+        Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
+        homePage.homepageSignInButton.click();
+        homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
+        homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
+        homePage.loginButton.click();
+    }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {

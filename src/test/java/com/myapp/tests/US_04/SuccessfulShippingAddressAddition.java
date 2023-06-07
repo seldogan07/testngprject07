@@ -5,20 +5,32 @@ import com.github.javafaker.Faker;
 import com.myapp.pages.PearlyMarketHomePage;
 import org.testng.annotations.Test;
 
+import static com.myapp.utilities.Driver.closeDriver;
 import static com.myapp.utilities.Driver.goToURL;
 import static com.myapp.utilities.WaitUtils.waitForVisibility;
 
 public class SuccessfulShippingAddressAddition {
-    Faker faker = new Faker();
-    String username;
-    @Test
-    public void signUpAndSignInTest(){
 
+    String username="Ali";
+    String email="Veli@gmail";
+    String password="12345";
+    @Test(priority = 1)
+    public void signUpAndSignInTest(){
+        // signing up
+        username= Faker.instance().name().username();
+        password= Faker.instance().internet().emailAddress();
+        password= Faker.instance().internet().password();
         PearlyMarketHomePage pearlyMarketHomePage =new PearlyMarketHomePage();
         goToURL("pearlymarket_homepage_url");
-        pearlyMarketHomePage.signInButton.click();
+        pearlyMarketHomePage.homepageRegisterButton.click();
+        pearlyMarketHomePage.usernameBox.sendKeys(username);
+        pearlyMarketHomePage.emailBox.sendKeys(email);
+        pearlyMarketHomePage.signUpPasswordBox.sendKeys(password);
+        pearlyMarketHomePage.registerPolicy.click();
+        pearlyMarketHomePage.signUpButton.click();
+        closeDriver();
     }
-    @Test
+    @Test(priority = 2)
     public void TC_001_Test(){
         PearlyMarketHomePage pearlyMarketHomePage =new PearlyMarketHomePage();
 
