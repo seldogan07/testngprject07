@@ -26,23 +26,5 @@ public class PMAddProductPage {
     @FindBy(xpath="//option[@value='external']")
     public WebElement dropdownExternalProductElement;
 
-//    @FindBy(xpath="//select[@id='product_type']")
-//    public WebElement dropdownSimpleProductElement;
-//
-//    @FindBy(xpath="//select[@id='product_type']")
-//    public WebElement dropdownSimpleProductElement;
-//
-//    @FindBy(xpath="//select[@id='product_type']")
-//    public WebElement dropdownSimpleProductElement;
-
-
-
-
-
-
-
-
-
-
 
 }
