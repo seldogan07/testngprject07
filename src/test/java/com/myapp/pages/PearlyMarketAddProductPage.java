@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PMAddProductPage {
+public class PearlyMarketAddProductPage {
 
-    public PMAddProductPage() {
+    public PearlyMarketAddProductPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
