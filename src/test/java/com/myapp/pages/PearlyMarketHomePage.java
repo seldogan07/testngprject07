@@ -44,6 +44,7 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "(//a[.='My Account'])[1]")
     public WebElement myAccountButton;
 
+
 }
 
 
