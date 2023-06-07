@@ -25,5 +25,8 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signinPageSigninButton;
 
+    @FindBy(partialLinkText = "My Account")
+    public WebElement myAccountButton;
+
 
 }
