@@ -3,6 +3,8 @@ import com.myapp.pages.PearlyMarketHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,13 +13,13 @@ import static org.testng.AssertJUnit.*;
 public class ReusableMethods {
 
     PearlyMarketHomePage homePage = new PearlyMarketHomePage();
-    public void logIn(){
+    public void signIn(){
         // System ConfigReader = null;
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
-        homePage.signInButton.click();
+        homePage.homepageSignInButton.click();
         homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
         homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
-        homePage.loginButonu.click();
+        homePage.signinPageSigninButton.click();
     }
 
     public static void clickWithTimeOut(WebElement element, int timeout) {
@@ -264,6 +266,14 @@ public class ReusableMethods {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
     }
+
+    //    ACTIONS_SCROLL_DOWN
+    public static void scrollPageEndActions() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        //Scroll down till the bottom of the page
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
+    }
     //    ACTIONS_SCROLL_UP
     public static void scrollUpActions() {
         //        Actions actions = new Actions(driver);
@@ -287,5 +297,12 @@ public class ReusableMethods {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).dragAndDropBy(source,x,y).perform();
     }
+
+    //   Explicit Wait
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
 }
 
