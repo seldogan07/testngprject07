@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class ConfigReader {
     //    This class will read configuration.properties file using JAVA
-//    create "Properties" object
+    //    create "Properties" object
     private static Properties properties;
 
     //    static block
