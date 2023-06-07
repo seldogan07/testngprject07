@@ -263,6 +263,13 @@ public class ReusableMethods {
     public static void scrollDownActions() {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
+    }    
+        //    ACTIONS_SCROLL_PAGE_END
+    public static void scrollPageEndActions() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        //Scroll down till the bottom of the page
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
     //    ACTIONS_SCROLL_UP
     public static void scrollUpActions() {
