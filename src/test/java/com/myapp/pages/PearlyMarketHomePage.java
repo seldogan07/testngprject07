@@ -50,5 +50,4 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
 
-
 }

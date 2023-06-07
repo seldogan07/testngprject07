@@ -19,7 +19,6 @@ public class ReusableMethods {
         homePage.homepageSignInButton.click();
         homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
         homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
-        // homePage.signinPageSigninButton.click();
         homePage.loginButton.click();
     }
 
@@ -266,8 +265,8 @@ public class ReusableMethods {
     public static void scrollDownActions() {
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
-    }
-    //    ACTIONS_SCROLL_PAGE_END
+    }    
+        //    ACTIONS_SCROLL_PAGE_END
     public static void scrollPageEndActions() {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         //Scroll down till the bottom of the page
