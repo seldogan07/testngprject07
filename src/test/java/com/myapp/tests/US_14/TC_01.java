@@ -16,7 +16,7 @@ public class TC_01 {
     public void addNewProductMenuTest(){
         reMethods.signIn();
         reMethods.scrollPageEndActions();
-        reMethods.waitForVisibility(pmHomePage.myAccountButton, 11);
+        // reMethods.waitForVisibility(pmHomePage.myAccountButton, 11);
         pmHomePage.myAccountButton.click();
         pmHomePage.storeManagerButton.click();
         pmHomePage.myStoreProductsElement.click();
