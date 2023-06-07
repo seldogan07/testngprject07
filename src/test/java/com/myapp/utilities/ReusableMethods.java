@@ -1,4 +1,5 @@
 package com.myapp.utilities;
+import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -302,6 +303,17 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+    //    SCROLL_INTO_VIEW - This will scroll the page till the element is found
+    public static void scrollIntoView(WebElement Element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        //Scroll the page till the element is found
+        js.executeScript("arguments[0].scrollIntoView();", Element);
+        new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
+    }
+
+
+
 
 }
 

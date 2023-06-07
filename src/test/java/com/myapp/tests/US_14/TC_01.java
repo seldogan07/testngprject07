@@ -6,7 +6,7 @@ import com.myapp.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_001 {
+public class TC_01 {
 
     ReusableMethods reMethods = new ReusableMethods();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();

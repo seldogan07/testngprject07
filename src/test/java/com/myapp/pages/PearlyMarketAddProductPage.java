@@ -26,6 +26,48 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//option[@value='external']")
     public WebElement dropdownExternalProductElement;
 
+    @FindBy(xpath="//button[@id='insert-media-button']")
+    public WebElement addMediaButton;
+
+    @FindBy(xpath="//div[@class='wcfm_product_manager_gallery_fields']")
+    public WebElement managerGalaryFields;
+
+    @FindBy(xpath="//img[@id='featured_img_display']")
+    public WebElement featuredImageBox;
+
+    @FindBy(xpath="//button[@id='menu-item-browse']")
+    public WebElement mediaLibrarySection;
+
+    @FindBy(xpath="//img[@id='gallery_img_gimage_0_display']")
+    public WebElement galaryImageBox;
+
+    @FindBy(xpath="//button[@id='__wp-uploader-id-1']")
+    public WebElement addToGalarySelectFileButton;
+
+    @FindBy(xpath="//li[@aria-label='Stool']")
+    public WebElement addToGalaryStoolImage;
+
+    @FindBy(xpath="(//div[@class='attachment-preview js--select-attachment type-image subtype-png portrait'])[2]")
+    public WebElement chooseImageStoolImage;
+
+    @FindBy(xpath="//button[@class='button media-button button-primary button-large media-button-select']")
+    public WebElement addToGalaryButton;
+
+    @FindBy(xpath="(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
+    public WebElement chooseImageSelectButton;
+
+
+
+
+    @FindBy(xpath="(//p[@class='wcfm_title wcfm_full_ele'])[1]")
+    public WebElement categoriesTitleElement;
+
+    @FindBy(xpath="//input[@id='regular_price']")
+    public WebElement addProductPriceBox;
+
+
+
+
 
 }
 
