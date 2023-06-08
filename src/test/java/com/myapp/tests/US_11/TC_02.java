@@ -1,7 +1,5 @@
 package com.myapp.tests.US_11;
-
 import com.myapp.pages.My_Account_2Page;
-<<<<<<< HEAD
 import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.pages.PearlyMarketMyAccountPage;
 import com.myapp.pages.PearlyMarketRegisterPage;
@@ -9,19 +7,19 @@ import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class TC_01 {
+public class TC_02 {
+
 //    1_Go to https://pearlymarket.com/
 //    2_Click on Sign in
 //    3_User should enter Email
 //    4_User should enter the password
 //    5_Click on SIGN In button
-//    6_‘My Account’ on the page should appear
+//    6_Dashboard and options below should appear
 
     @Test
-    public void US11_TC01(){
+    public void US11_TC02(){
 
 //        1_Go to https://pearlymarket.com/
-
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage pearlyMarketHomePage = new PearlyMarketHomePage();
@@ -29,7 +27,7 @@ public class TC_01 {
         PearlyMarketMyAccountPage pearlyMarketMyAccountPage = new PearlyMarketMyAccountPage();
         My_Account_2Page my_account_2Page = new My_Account_2Page();
 
-//        2_Click on Sign in
+ //        2_Click on Sign in
         pearlyMarketHomePage.homePageSignInLink.click();
 
 //        3_User should enter Email
@@ -41,36 +39,22 @@ public class TC_01 {
 //        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        6_‘My Account’ on the page should appear
-        pearlyMarketMyAccountPage.myAccountText.isDisplayed();
-=======
-import com.myapp.utilities.ConfigReader;
-import com.myapp.utilities.Driver;
-import com.myapp.utilities.ReusableMethods;
-import org.junit.Test;
-import org.openqa.selenium.interactions.Actions;
+//        6_Click on Sign Out button
+        pearlyMarketHomePage.signOutLink.click();
 
-import javax.swing.*;
-
-public class TC_01 {
-    My_Account_2Page myAccount2Page;
-    Actions actions;
-
-    @Test
-    public void US011_TC01() {
-
-        Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
-
-
-
-
-
-
->>>>>>> master
-
-
-    }
-
+//        6_Dashboard and options below should appear
+        pearlyMarketMyAccountPage.dashboardLink.isDisplayed();
+        pearlyMarketMyAccountPage.storeManagerLink.isDisplayed();
+        pearlyMarketMyAccountPage.ordersLink.isDisplayed();
+        pearlyMarketMyAccountPage.downloadsLink.isDisplayed();
+        pearlyMarketMyAccountPage.addressesLink.isDisplayed();
+        pearlyMarketMyAccountPage.accountDetailsLink.isDisplayed();
+        pearlyMarketMyAccountPage.wishlistLink.isDisplayed();
+        pearlyMarketMyAccountPage.supportTicketsLink.isDisplayed();
+        pearlyMarketMyAccountPage.followingsLink.isDisplayed();
+        pearlyMarketMyAccountPage.logoutLink.isDisplayed();
 
 
 }
+        }
+

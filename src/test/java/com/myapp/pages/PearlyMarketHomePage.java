@@ -49,16 +49,16 @@ public class PearlyMarketHomePage {
     public WebElement myStoreProductsElement;
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
-
+    @FindBy(xpath = "//span[text()='Sign In']")
+    public WebElement homePageSignInLink;
+    @FindBy(xpath = "//span[text()='Sign Out']")
+    public WebElement signOutLink;
     @FindBy(xpath = "(//a[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link'])[2]")
     public WebElement clickAProductAsAVendor;
-
     @FindBy(xpath = "//button[@name='add-to-cart']")
     public WebElement addToChartButton;
-
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")
     public WebElement chartButton;
-
     @FindBy(xpath = "//a[.='View cart']")
     public WebElement viewChartButton;
 
@@ -109,6 +109,7 @@ public class PearlyMarketHomePage {
 
 
 
+>>>>>>> master
 
 
 }
