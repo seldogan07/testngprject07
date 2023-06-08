@@ -1,4 +1,5 @@
 package com.myapp.utilities;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 public class JSUtils {
@@ -11,6 +12,7 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
+
     /*
     scroll all the way down
      */
@@ -35,7 +37,7 @@ public class JSUtils {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
     /*
-   @param String id of teh webelement that we want to locate
+   @param String id of teh web element that we want to locate
    locating element using javascript executor
    and returns that WebElement
    Note that this is NOT common and we should use 8 locators that we learned in selenium

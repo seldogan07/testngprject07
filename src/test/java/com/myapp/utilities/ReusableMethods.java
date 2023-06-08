@@ -1,13 +1,29 @@
 package com.myapp.utilities;
+import com.myapp.pages.PearlyMarketHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import static org.testng.AssertJUnit.*;
 
 public class ReusableMethods {
+
+
+
+    public static void signIn(){
+        // System ConfigReader = null;
+        PearlyMarketHomePage homePage = new PearlyMarketHomePage();
+        Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
+        homePage.homepageSignInButton.click();
+        homePage.usernameBox.sendKeys(ConfigReader.getProperty("PMValidUsername"));
+        homePage.passwordBox.sendKeys(ConfigReader.getProperty("PMValidPassword"));
+        homePage.loginButton.click();
+    }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -202,12 +218,18 @@ public class ReusableMethods {
         }
     }
     //    ALERT
-    public void acceptAlert() throws InterruptedException {
+    public static void acceptAlert() throws InterruptedException {
         Driver.getDriver().switchTo().alert().accept();
     }
-    public void dismissAlert() throws InterruptedException {
-        Driver.getDriver().switchTo().alert().accept();
+    public static void dismissAlert() throws InterruptedException {
+        Driver.getDriver().switchTo().alert().dismiss();
     }
+    //Alert Wait
+    public static void alertWait(int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     //    IFRAME
     public static void switchIframeByWebElement(String xpath){
         WebElement iframeElement = Driver.getDriver().findElement(By.xpath(xpath));
@@ -248,7 +270,7 @@ public class ReusableMethods {
         new Actions(Driver.getDriver()).moveToElement(element).perform();
     }
     //    ACTIONS_SCROLL_DOWN
-    public static void scrollDownActions() {
+    public static void scrollDownActions(){
         //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
     }

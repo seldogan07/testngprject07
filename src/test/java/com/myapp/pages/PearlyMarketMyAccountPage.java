@@ -30,6 +30,15 @@ public class PearlyMarketMyAccountPage {
     public WebElement followingsLink;
     @FindBy(xpath = "//a[.='Logout']")
     public WebElement logoutLink;
+    @FindBy(xpath = "//*[@href='https://pearlymarket.com/my-account-2/edit-address/shipping/']")
+    public WebElement shippingAddLink;
+    @FindBy(xpath = "//*[@href='https://pearlymarket.com/my-account-2/edit-address/billing/']")
+    public WebElement billingAddLink;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement successAlert;
+
 
 
 }
+
+
