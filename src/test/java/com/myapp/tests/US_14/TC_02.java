@@ -5,7 +5,6 @@ import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.utilities.Driver;
 import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_02 {

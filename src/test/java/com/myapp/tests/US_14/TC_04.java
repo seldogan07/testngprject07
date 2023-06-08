@@ -7,7 +7,7 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-public class TC_03 {
+public class TC_04 {
 
     ReusableMethods reMethods = new ReusableMethods();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
@@ -24,17 +24,10 @@ public class TC_03 {
         pmHomePage.myStoreProductsElement.click();
         reMethods.hoverOverOnElementActions(pmHomePage.myStoreProductsElement);
         pmHomePage.productsAddnewElement.click();
-        reMethods.scrollIntoView(pmAddProductPage.productTitleBox);
+        // reMethods.scrollIntoView(pmAddProductPage.applephoneCheckboxInCategories);
+        reMethods.scrollDownActions();
 
-        pmAddProductPage.productTitleBox.sendKeys("Stool");
-
-        Driver.getDriver().switchTo().frame(pmAddProductPage.shortDescriptionIFrame);
-        pmAddProductPage.shortDescriptionTextBox.sendKeys("Round 4-Leg Stool");
-
-        Driver.getDriver().switchTo().parentFrame();   // to switch out of the previous iframe
-
-        Driver.getDriver().switchTo().frame(pmAddProductPage.descriptionIFrame);
-        pmAddProductPage.descriptionTextBox.sendKeys("It is a round brown stool with 4 legs in light brown");
+        pmAddProductPage.applephoneCheckboxInCategories.click();
 
     }
 

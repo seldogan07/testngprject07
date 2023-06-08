@@ -76,6 +76,10 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="(//p[@class='wcfm_title wcfm_full_ele'])[1]")
     public WebElement categoriesTitleElement;
 
+    @FindBy(xpath="//input[@data-super_parent='428']")
+    public WebElement applephoneCheckboxInCategories;
+
+
     @FindBy(xpath="//input[@id='regular_price']")
     public WebElement addProductPriceBox;
 
