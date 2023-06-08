@@ -8,6 +8,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+/*
+1. Go to https://pearlymarket.com/
+2. Sign in
+3. Go to "Add New" page
+4. Click on "+Add new Product brands" link under "Product brands"
+5. Type a product brand in "Product brands Name" box
+6. Choose a Parent taxonomy  from "Parent Category" drop-down element
+7. Click "ADD" button
+*/
+
 public class TC_07 {
 
     ReusableMethods reMethods = new ReusableMethods();

@@ -7,6 +7,17 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+/*
+1. Go to https://pearlymarket.com/
+2. Sign in
+3. Go to "Add New" page
+4. Click on galary image box on the upper- right under featured image box
+5. Click on "SELECT FILES" box on "Add to Galary" window, select an image & click on "ADD TO GALARY" on the right-bottom corner
+6. Click on featured image box on the upper- right above galary image box
+7. Click on "Media Library" section on"Choose Image" window
+8. Select an image & click on "SELECT" box on the right-bottom corner
+*/
+
 public class TC_02 {
 
     ReusableMethods reMethods = new ReusableMethods();

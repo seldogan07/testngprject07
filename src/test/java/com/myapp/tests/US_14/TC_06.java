@@ -8,6 +8,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+/*
+1. Go to https://pearlymarket.com/
+2. Sign in
+3. Go to "Add New" page
+4. Tick a brand in "Product brands" on the right
+*/
+
 public class TC_06 {
 
     ReusableMethods reMethods = new ReusableMethods();
