@@ -11,23 +11,20 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC_01 {
-   public ExcelUtils excelUtils;
-//    1_Go to https://pearlymarket.com/
-//    2_ Navigate to registration page
-//  3_Verify that the Sign Up tab is selected on the Register screen.
-//    4_On the Register screen, locate the "Become a Vendor" link and click on
-//5_ Enter a valid email address in the email address field
-//6_Enter the received verification code in the verification code text box
-//7_Enter a password that meets the requirements (contains uppercase, lowercase, digit, and special characters) in the password field.
-//   8_Enter the same password again in the password confirmation field.
-//   9_Click on the "Register" button.
-//10_"Registration completed successfully!" message should be visible
-//11_Ensure that the user is redirected to the appropriate Vendor dashboard or landing page.
+public class TC_08 {
+    public ExcelUtils excelUtils;
 
+//    1_Go to https://pearlymarket.com/
+//            2_ Navigate to registration page
+//3_Click on Sign Up button
+//4_On the Register screen, locate the "Become a Vendor" link.
+//5_Click on "Become a Vendor" link
+//6_ Enter a password that contains uppercase letters, lowercase letters, and special characters, but no digit
+//7_ Proceed with the registration process
+//8_Verify that an error message is displayed, indicating that the password must contain at least one digit.
 
     @Test
-    public void US09_TC01 () throws IOException {
+    public void US09_TC08 () throws IOException {
 
         // 1_Go to https://pearlymarket.com/
 
@@ -53,14 +50,7 @@ public class TC_01 {
         pearlyMarketRegisterPage.becomeAVendorLink.click();
 
 
-        //5_ Enter a valid email address in the email address field
-
         pearlyMarketVendorRegisterPage.emailBox.sendKeys(ConfigReader.getProperty("vendorregistermail"));
-
-        //6_ Verify that “Verification code sent to your email: stevegregor2023@gmail.com.” is visible
-        WaitUtils.waitForVisibility(pearlyMarketVendorRegisterPage.verificationCodeSentBox,3);
-
-        //7_Enter the received verification code in the verification code text box
 
         pearlyMarketVendorRegisterPage.verifCodeBox.click();
 
@@ -85,27 +75,22 @@ public class TC_01 {
         MediaUtils.takeScreenshotOfTheEntirePageAsString();
 
 
+        //5_ Leave the e-mail text area empty
+        pearlyMarketVendorRegisterPage.emailBox.sendKeys(ConfigReader.getProperty("vendorregistermail"));
 
-        //8_Enter a password that meets the requirements (contains uppercase, lowercase, digit, and special characters) in the password field.
+        //6_ Enter a password that contains uppercase letters, lowercase letters, and special characters, but no digit
 
-       pearlyMarketVendorRegisterPage.passwordBox.sendKeys(ConfigReader.getProperty("vendorregisterpass"));
+        pearlyMarketVendorRegisterPage.passwordBox.sendKeys("PASSWORD!");
+        pearlyMarketVendorRegisterPage.confirmPasswordBox.sendKeys("PASSWORD!");
 
-        //   9_Enter the same password again in the password confirmation field.
+        WaitUtils.waitFor(2);
+        //7_Click on register button
+        JSUtils.clickWithTimeoutByJS(pearlyMarketVendorRegisterPage.registerButton);
 
-        pearlyMarketVendorRegisterPage.confirmPasswordBox.sendKeys(ConfigReader.getProperty("vendorregisterpass"));
+        //8_Verify that an error message is displayed, indicating that the password must contain at least one digit.
+        // We can directly registered with no lowercase password.
 
-       //   10_Click on the "Register" button.
-
-       pearlyMarketVendorRegisterPage.registerButton.click();
-
-       //10_"Registration completed successfully!" message should be visible
-
-        pearlyMarketVendorRegisterPage.registeredMessage.isDisplayed();
-
-     //11_Ensure that the user is redirected to the appropriate Vendor dashboard or landing page.
-
-      WaitUtils.waitForClickablility(pearlyMarketVendorRegisterPage.notRightNowLink,2);
-      pearlyMarketMyAccountPage.dashboardLink.isDisplayed();
+        MediaUtils.takeScreenshotOfTheEntirePageAsString();
 
     }
 }

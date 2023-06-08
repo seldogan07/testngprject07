@@ -1,6 +1,8 @@
 package com.myapp.utilities;
+import com.myapp.pages.My_Account_2Page;
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
+import com.myapp.pages.PearlyMarketRegisterPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -206,7 +208,7 @@ public class ReusableMethods {
         }
     }
     //    VERIFY IS EXPECTED AND ACTUAL TEXTS ARE MATCHING
-    public static void verifyExpectedAndActualTextMatch(String expectedText,WebElement actualElement){
+    public static void verifyExpectedAndActualTextMatch (String expectedText,WebElement actualElement){
         try {
 //            Just in case there is a synchronization issue, handle it first then get the text
             WaitUtils.waitForVisibility(actualElement,10);
@@ -312,7 +314,19 @@ public class ReusableMethods {
         new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
 
+    public static void MyAccountSignIn(){
 
-
-
+        My_Account_2Page myAccount2Page = new My_Account_2Page();
+        myAccount2Page.signIn.click();
+        myAccount2Page.userName.sendKeys("sumeyrabaz@gmail.com");
+        myAccount2Page.password.sendKeys("483348Sb");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        myAccount2Page.signIn2.click();
+        WebElement signOut = myAccount2Page.signOut;
+        ReusableMethods.waitForVisibility(signOut, 5);
+    }
 }
