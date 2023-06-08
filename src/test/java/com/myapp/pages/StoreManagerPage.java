@@ -14,6 +14,4 @@ public class StoreManagerPage {
             "Coupons\t\t\t\t\t\t\t']")
     public WebElement couponsButton;
 
-    @FindBy(xpath = "//span[class()='wcfm_sub_menu_items wcfm_sub_menu_items_coupon_manage moz_class']")
-    public WebElement addCouponButton;
 }

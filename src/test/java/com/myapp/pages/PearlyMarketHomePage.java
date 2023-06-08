@@ -43,10 +43,18 @@ public class PearlyMarketHomePage {
     // *********************************************
     @FindBy(xpath = "/html/body/div[2]/footer/div/section[2]/div/div[2]/div/section/div/div[2]/div/div[2]/div/nav/ul/li[4]")
     public WebElement myAccountButton;
+
+    @FindBy(partialLinkText = "My Account")
+    public WebElement account;
+
     @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/']")
     public WebElement storeManagerButton;
+    @FindBy(partialLinkText = "Store Manager")
+    public WebElement myStoreManagerButton;
     @FindBy(xpath = "(//a[@class='wcfm_menu_item '])[3]")
     public WebElement myStoreProductsElement;
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[7]/a/span[2]")
+    public WebElement couponsButton;
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
 

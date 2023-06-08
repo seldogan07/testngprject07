@@ -1,6 +1,8 @@
 package com.myapp.tests.US_18;
 
 
+import com.github.javafaker.Faker;
+import com.myapp.pages.Manage_CouponPage;
 import com.myapp.pages.My_Account_2Page;
 import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.pages.StoreManagerPage;
@@ -12,21 +14,27 @@ import org.testng.annotations.Test;
 
 public class UserShouldBeCreateCoupons {
     @Test
-    public void createCoupon() throws InterruptedException {
+    public void createCoupon() throws Exception {
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
 
         PearlyMarketHomePage homePage=new PearlyMarketHomePage();
-
+        Manage_CouponPage manageCouponPage=new Manage_CouponPage();
         ReusableMethods reusableMethods=new ReusableMethods();
+        Faker faker=new Faker();
         reusableMethods.signIn();
 
-        JSUtils.clickWithTimeoutByJS(homePage.myAccountButton);
+        JSUtils.clickWithTimeoutByJS(homePage.account);
 
-        My_Account_2Page my_account_2Page=new My_Account_2Page();
+        JSUtils.clickWithTimeoutByJS(homePage.myStoreManagerButton);
 
-        JSUtils.clickWithTimeoutByJS(my_account_2Page.storeManagerButton);
-        StoreManagerPage storeManagerPage=new StoreManagerPage();
-        Actions actions=new Actions(Driver.getDriver());
+        JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
+
+        manageCouponPage.addCouponButton.click();
+        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
+        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
+        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
+        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
+
 
     }
 }
