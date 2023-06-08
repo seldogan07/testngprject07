@@ -98,4 +98,7 @@ public class PearlyMarketHomePage {
 
     @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement orderCompleteMessageElement;
+
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[7]/a/span[2]")
+    public WebElement couponsButton;
 }
