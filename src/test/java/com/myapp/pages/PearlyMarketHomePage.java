@@ -50,4 +50,11 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
 
+    @FindBy(xpath = "//span[text()='Sign In']")
+    public WebElement homePageSignInLink;
+
+    @FindBy(xpath = "//span[text()='Sign Out']")
+    public WebElement signOutLink;
+
+
 }
