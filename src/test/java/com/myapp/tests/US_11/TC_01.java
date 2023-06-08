@@ -1,7 +1,6 @@
 //package com.myapp.tests.US_11;
 //
 //import com.myapp.pages.My_Account_2Page;
-//<<<<<<< HEAD
 //import com.myapp.pages.PearlyMarketHomePage;
 //import com.myapp.pages.PearlyMarketMyAccountPage;
 //import com.myapp.pages.PearlyMarketRegisterPage;
@@ -43,7 +42,7 @@
 //
 ////        6_‘My Account’ on the page should appear
 //        pearlyMarketMyAccountPage.myAccountText.isDisplayed();
-//=======
+//
 //import com.myapp.utilities.ConfigReader;
 //import com.myapp.utilities.Driver;
 //import com.myapp.utilities.ReusableMethods;
@@ -66,7 +65,6 @@
 //
 //
 //
-//>>>>>>> master
 //
 //
 //    }
