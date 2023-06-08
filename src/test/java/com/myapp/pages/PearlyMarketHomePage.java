@@ -60,6 +60,7 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//a[.='View cart']")
     public WebElement viewChartButton;
 
+<<<<<<< HEAD
     @FindBy(xpath = "(//a[.='Checkout'])[2]")
     public WebElement checkoutButton;
 
@@ -99,3 +100,6 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement orderCompleteMessageElement;
 }
+=======
+}
+>>>>>>> ibrahim

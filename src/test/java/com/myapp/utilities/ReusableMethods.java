@@ -1,5 +1,8 @@
 package com.myapp.utilities;
+<<<<<<< HEAD
 import com.myapp.pages.My_Account_2Page;
+=======
+>>>>>>> ibrahim
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.pages.PearlyMarketRegisterPage;
@@ -314,5 +317,11 @@ public class ReusableMethods {
         new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> ibrahim
 }
 
