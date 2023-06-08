@@ -16,12 +16,10 @@ public class PearlyMarketHomePage {
        After click to SignIn/Register then ALERT appears.
        And In Alert we have SIGN UP and SIGN IN parts
        */
-    //<<<<<<< HEAD
     @FindBy(xpath = "//span[text()='Sign In']")
     public WebElement homepageSignInButton;
     @FindBy(xpath = "//span[text()='Register']")
     public WebElement homepageRegisterButton;
-    //=======
 
     // ************** SIGN IN / SIGN UP **********
     @FindBy(xpath = "//input[@id='username']")// for SIGN IN & SIGN UP
