@@ -41,9 +41,6 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//input[@id='sale_price']")
     public WebElement salePriceBox;
 
-    @FindBy(xpath="//input[@id='pro_title']")
-    public WebElement productTitleBox;
-
     @FindBy(xpath="//input[@data-super_parent='226']")
     public WebElement kitchenButton;
 
@@ -53,7 +50,19 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//span[text()='Published']") // to verify that the product is installed
     public WebElement publishedText;
 
-    @FindBy(xpath="//input[@value='405']")
+    @FindBy(xpath="//button[@id='insert-media-button']")
+    public WebElement addMediaButton;
+
+    @FindBy(xpath="//div[@class='wcfm_product_manager_gallery_fields']")
+    public WebElement managerGalaryFields;
+
+    @FindBy(xpath="//img[@id='featured_img_display']")
+    public WebElement featuredImageBox;
+
+    @FindBy(xpath="//button[@id='menu-item-browse']")
+    public WebElement mediaLibrarySection;
+
+    @FindBy(xpath="//img[@id='gallery_img_gimage_0_display']")
     public WebElement galaryImageBox;
 
     @FindBy(xpath="//button[@id='__wp-uploader-id-1']")
@@ -68,14 +77,71 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//button[@class='button media-button button-primary button-large media-button-select']")
     public WebElement addToGalaryButton;
 
-    @FindBy(xpath="//img[@id='featured_img_display']")
-    public WebElement featuredImageBox;
-
-    @FindBy(xpath="//button[@id='menu-item-browse']")
-    public WebElement mediaLibrarySection;
-
     @FindBy(xpath="(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
     public WebElement chooseImageSelectButton;
 
+    @FindBy(id="pro_title")
+    public WebElement productTitleBox;
+
+    @FindBy(id="excerpt_ifr")
+    public WebElement shortDescriptionIFrame;
+
+    @FindBy(id="description_ifr")
+    public WebElement descriptionIFrame;
+
+    @FindBy(xpath="//body[@class='mce-content-body excerpt post-type-page post-status-publish page-template-default locale-en-us mceContentBody webkit wp-editor html5-captions']")
+    public WebElement shortDescriptionTextBox;
+
+    @FindBy(xpath="//body[@data-id='description']")
+    public WebElement descriptionTextBox;
+
+    @FindBy(xpath="(//p[@class='wcfm_title wcfm_full_ele'])[1]")
+    public WebElement categoriesTitleElement;
+
+    @FindBy(xpath="//input[@data-super_parent='428']")
+    public WebElement applephoneCheckboxInCategories;
+
+    @FindBy(xpath="(//div[@class='wcfm_add_new_category_box wcfm_add_new_taxonomy_box'])[1]")
+    public WebElement addNewCategoryLink;
+
+    @FindBy(xpath="(//div[@class='wcfm_add_new_category_box wcfm_add_new_taxonomy_box'])[2]")
+    public WebElement addNewProductBrandLink;
+
+    @FindBy(xpath="//input[@id='wcfm_new_cat']")
+    public WebElement categoryNameBox;
+
+    @FindBy(xpath="//select[@id='wcfm_new_parent_cat']")
+    public WebElement parentCategoryDropdownElement;
+
+    @FindBy(xpath="(//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt'])[1]")
+    public WebElement productCategoryAddButton;
+
+    @FindBy(xpath="//input[@data-super_parent='432']")
+    public WebElement adidasProductBrandTickBox;
+
+    @FindBy(xpath="//input[@id='wcfm_new_product_brand']")
+    public WebElement productBrandsNameBox;
+
+    @FindBy(xpath="//select[@name='wcfm_new_parent_product_brand']")
+    public WebElement parentTaxomonyDropdown;
+
+    @FindBy(xpath="//button[@data-taxonomy='product_brand']")
+    public WebElement newProductAddButton;
+
+
+
+
+
+
+
+
+    @FindBy(xpath="//input[@id='regular_price']")
+    public WebElement addProductPriceBox;
+
+
+
+
+
 
 }
+

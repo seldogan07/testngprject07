@@ -23,6 +23,7 @@ public class Manage_CouponPage {
     public WebElement couponAmount;
     @FindBy(id="expiry_date")
     public WebElement expiryDate;
+
     @FindBy(xpath = "//td[@data-day='15']")
     public WebElement dateTable;
     @FindBy(id = "wcfm_coupon_manager_submit_button")

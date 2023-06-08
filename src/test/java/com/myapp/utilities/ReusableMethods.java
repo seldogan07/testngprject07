@@ -1,4 +1,5 @@
 package com.myapp.utilities;
+
 import com.myapp.pages.My_Account_2Page;
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
@@ -313,6 +314,7 @@ public class ReusableMethods {
         js.executeScript("arguments[0].scrollIntoView();", Element);
         new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
+
 
 }
 
