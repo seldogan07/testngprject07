@@ -7,6 +7,15 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+/*
+1. Go to https://pearlymarket.com/
+2. Sign in
+3. Go to "Add New" page
+4. Click in "Product Title" section & type a product title 
+5. Click in "Short Description" section & type a short description 
+6. Click in "Description" section & type a description
+*/
+
 public class TC_03 {
 
     ReusableMethods reMethods = new ReusableMethods();
