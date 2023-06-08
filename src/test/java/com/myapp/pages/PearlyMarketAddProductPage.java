@@ -119,6 +119,18 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//input[@data-super_parent='432']")
     public WebElement adidasProductBrandTickBox;
 
+    @FindBy(xpath="//input[@id='wcfm_new_product_brand']")
+    public WebElement productBrandsNameBox;
+
+    @FindBy(xpath="//select[@name='wcfm_new_parent_product_brand']")
+    public WebElement parentTaxomonyDropdown;
+
+    @FindBy(xpath="//button[@data-taxonomy='product_brand']")
+    public WebElement newProductAddButton;
+
+
+
+
 
 
 
