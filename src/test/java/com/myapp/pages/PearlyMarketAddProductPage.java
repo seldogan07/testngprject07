@@ -56,6 +56,20 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
     public WebElement chooseImageSelectButton;
 
+    @FindBy(id="pro_title")
+    public WebElement productTitleBox;
+
+    @FindBy(id="excerpt_ifr")
+    public WebElement shortDescriptionIFrame;
+
+    @FindBy(id="description_ifr")
+    public WebElement descriptionIFrame;
+
+    @FindBy(xpath="//body[@class='mce-content-body excerpt post-type-page post-status-publish page-template-default locale-en-us mceContentBody webkit wp-editor html5-captions']")
+    public WebElement shortDescriptionTextBox;
+
+    @FindBy(xpath="//body[@data-id='description']")
+    public WebElement descriptionTextBox;
 
 
 
