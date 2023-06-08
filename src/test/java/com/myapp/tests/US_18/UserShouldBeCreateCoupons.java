@@ -1,19 +1,20 @@
 package com.myapp.tests.US_18;
 
 
+
 import com.github.javafaker.Faker;
 import com.myapp.pages.Manage_CouponPage;
-import com.myapp.pages.My_Account_2Page;
 import com.myapp.pages.PearlyMarketHomePage;
-import com.myapp.pages.StoreManagerPage;
 import com.myapp.utilities.*;
+import com.myapp.utilities.ConfigReader;
+import com.myapp.utilities.Driver;
+import com.myapp.utilities.JSUtils;
 
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class UserShouldBeCreateCoupons {
     @Test
+
     public void createCoupon() throws Exception {
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
 

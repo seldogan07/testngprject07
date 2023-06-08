@@ -10,14 +10,17 @@ public class Manage_CouponPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     @FindBy(xpath = "//span[text()='Add New']")
     public WebElement addCouponButton;
+
 
     @FindBy(id="title")
     public WebElement couponCode;
 
     @FindBy(id="description")
     public WebElement couponDescription;
+
 
     @FindBy(id = "discount_type")
     public WebElement discountType;
@@ -26,3 +29,4 @@ public class Manage_CouponPage {
     public WebElement couponAmount;
 
 }
+
