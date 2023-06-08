@@ -7,6 +7,13 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+/*
+1. Go to https://pearlymarket.com/
+2. Sign in
+3. Go to "Add New" page
+4. Tick a category / multiple categories in "Categories" on the right
+*/
+
 public class TC_04 {
 
     ReusableMethods reMethods = new ReusableMethods();
