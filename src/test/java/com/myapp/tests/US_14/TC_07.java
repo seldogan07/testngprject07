@@ -39,11 +39,3 @@ public class TC_07 {
     }
 
 }
-
-/*
-4_Click on "+Add new Product brands" link under "Product brands"
-5_Type a product brand in "Product brands Name" box
-6_Choose a Parent taxonomy  from "Parent Category" drop-down element
-7_Click "ADD" button
-
- */
