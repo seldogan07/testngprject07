@@ -1,6 +1,8 @@
 package com.myapp.utilities;
+import com.myapp.pages.My_Account_2Page;
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
+import com.myapp.pages.PearlyMarketRegisterPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -206,7 +208,7 @@ public class ReusableMethods {
         }
     }
     //    VERIFY IS EXPECTED AND ACTUAL TEXTS ARE MATCHING
-    public static void verifyExpectedAndActualTextMatch(String expectedText,WebElement actualElement){
+    public static void verifyExpectedAndActualTextMatch (String expectedText,WebElement actualElement){
         try {
 //            Just in case there is a synchronization issue, handle it first then get the text
             WaitUtils.waitForVisibility(actualElement,10);
@@ -312,7 +314,5 @@ public class ReusableMethods {
         new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
 
-
-
-
 }
+
