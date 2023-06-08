@@ -314,19 +314,5 @@ public class ReusableMethods {
         new Actions(Driver.getDriver()).sendKeys(Keys.END).build().perform();
     }
 
-    public static void MyAccountSignIn(){
-
-        My_Account_2Page myAccount2Page = new My_Account_2Page();
-        myAccount2Page.signIn.click();
-        myAccount2Page.userName.sendKeys("sumeyrabaz@gmail.com");
-        myAccount2Page.password.sendKeys("483348Sb");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        myAccount2Page.signIn2.click();
-        WebElement signOut = myAccount2Page.signOut;
-        ReusableMethods.waitForVisibility(signOut, 5);
-    }
 }
+
