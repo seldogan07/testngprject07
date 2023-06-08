@@ -47,7 +47,13 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//input[@data-super_parent='226']")
     public WebElement kitchenButton;
 
-    @FindBy(xpath="//img[@id='gallery_img_gimage_0_display']")
+    @FindBy(xpath="//input[@name='submit-data']") // click after all necessary field fill
+    public WebElement submitButton;
+
+    @FindBy(xpath="//span[text()='Published']") // to verify that the product is installed
+    public WebElement publishedText;
+
+    @FindBy(xpath="//input[@value='405']")
     public WebElement galaryImageBox;
 
     @FindBy(xpath="//button[@id='__wp-uploader-id-1']")

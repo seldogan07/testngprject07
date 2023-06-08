@@ -30,11 +30,12 @@ public class PearlyMarketMyAccountPage {
     public WebElement followingsLink;
     @FindBy(xpath = "//a[.='Logout']")
     public WebElement logoutLink;
-
     @FindBy(xpath = "//a[.='Store Manager']")
     public WebElement storeManagerLink;
     @FindBy(xpath = "(//h2)[1]")
     public WebElement myAccountText;
+    @FindBy(xpath = "//a[.='Go Shop']")
+    public WebElement goShopLink;
 
 
 
