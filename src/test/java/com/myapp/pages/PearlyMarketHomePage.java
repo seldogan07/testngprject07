@@ -100,16 +100,4 @@ public class PearlyMarketHomePage {
 
     @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement orderCompleteMessageElement;
-
-
-
-
-
-
-
-
-
->>>>>>> master
-
-
 }
