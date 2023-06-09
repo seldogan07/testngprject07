@@ -6,6 +6,7 @@ import com.myapp.utilities.Driver;
 import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -40,13 +41,13 @@ public class TC_03 {
         // reMethods.scrollIntoView(pmAddProductPage.applephoneCheckboxInCategories);
         reMethods.scrollDownActions();
         reMethods.scrollDownActions();
-        pmAddProductPage.addNewProductBrandLink.click();
-        pmAddProductPage.productBrandsNameBox.click();
-        pmAddProductPage.productBrandsNameBox.sendKeys("Abrahams Garden");
 
-        Select selectparentTaxomonyDropdown=new Select(pmAddProductPage.parentTaxomonyDropdown);
-        selectparentTaxomonyDropdown.selectByVisibleText("Green Grass");
-        pmAddProductPage.newProductAddButton.click();
+        Assert.assertTrue(pmAddProductPage.addProductInventoryBox.isDisplayed());
+        Assert.assertTrue(pmAddProductPage.addProductShippingBox.isDisplayed());
+        Assert.assertTrue(pmAddProductPage.addProductAttributesBox.isDisplayed());
+        Assert.assertTrue(pmAddProductPage.addProductLinkedBox.isDisplayed());
+        Assert.assertTrue(pmAddProductPage.addProductSEOBox.isDisplayed());
+        Assert.assertTrue(pmAddProductPage.addProductAdvancedBox.isDisplayed());
 
     }
 

@@ -146,10 +146,23 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[10]")
     public WebElement addProductAdvancedBox;
 
+    @FindBy(id="sku")
+    public WebElement skuValueBox;
 
+    @FindBy(id="manage_stock")
+    public WebElement manageStockClickBox;
 
+    @FindBy(id="stock_qty")
+    public WebElement stockqtyBox;
 
+    @FindBy(id="stock_status")
+    public WebElement stockstatusDropdown;
 
+    @FindBy(id="sold_individually")
+    public WebElement soldIndividuallyBox;
+
+    @FindBy(id="wcfm_products_simple_submit_button")
+    public WebElement addProductSubmitButton;
 
 
     @FindBy(xpath="//input[@id='regular_price']")

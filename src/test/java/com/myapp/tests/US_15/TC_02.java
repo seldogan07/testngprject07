@@ -6,6 +6,7 @@ import com.myapp.utilities.Driver;
 import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -42,14 +43,30 @@ public class TC_02 {
         // reMethods.scrollIntoView(pmAddProductPage.applephoneCheckboxInCategories);
         reMethods.scrollDownActions();
         reMethods.scrollDownActions();
-        pmAddProductPage.addNewProductBrandLink.click();
-        pmAddProductPage.productBrandsNameBox.click();
-        pmAddProductPage.productBrandsNameBox.sendKeys("Abrahams Garden");
+        reMethods.scrollDownActions();
 
-        Select selectparentTaxomonyDropdown=new Select(pmAddProductPage.parentTaxomonyDropdown);
-        selectparentTaxomonyDropdown.selectByVisibleText("Green Grass");
-        pmAddProductPage.newProductAddButton.click();
+        pmAddProductPage.addProductInventoryBox.click();
+        pmAddProductPage.skuValueBox.sendKeys("1907");
+        pmAddProductPage.manageStockClickBox.click();
+        pmAddProductPage.stockqtyBox.sendKeys("11");
+        pmAddProductPage.manageStockClickBox.click();
+        Select selectStockStatus = new Select(pmAddProductPage.stockstatusDropdown);
+        selectStockStatus.selectByVisibleText("On backorder");
+        pmAddProductPage.soldIndividuallyBox.click();
+        pmAddProductPage.addProductSubmitButton.click();
+
+
 
     }
 
 }
+
+/*
+5. Enter a SKU value into SKU box
+6. Click on "Manage Stock?" check box
+7. Enter a quantity into "Stock Qty" box
+8. Uncheck "Manage Stock?" check box
+9. Choose an option from "Stock status" drop-down menu
+10. Click on "Sold Individually" check box
+11. Click on "SUBMIT" button on the right bottom corner
+*/
