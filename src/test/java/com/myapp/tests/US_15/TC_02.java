@@ -60,13 +60,3 @@ public class TC_02 {
     }
 
 }
-
-/*
-5. Enter a SKU value into SKU box
-6. Click on "Manage Stock?" check box
-7. Enter a quantity into "Stock Qty" box
-8. Uncheck "Manage Stock?" check box
-9. Choose an option from "Stock status" drop-down menu
-10. Click on "Sold Individually" check box
-11. Click on "SUBMIT" button on the right bottom corner
-*/
