@@ -25,6 +25,7 @@ public class TC_04 {
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
     PearlyMarketAddProductPage pmAddProductPage = new PearlyMarketAddProductPage();
     JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+    Select selectColor;
 
     @Test
     public void addNewProductMenuTest(){
@@ -40,12 +41,15 @@ public class TC_04 {
         reMethods.scrollDownActions();
         reMethods.scrollDownActions();
 
-        Assert.assertTrue(pmAddProductPage.addProductInventoryBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductShippingBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductAttributesBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductLinkedBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductSEOBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductAdvancedBox.isDisplayed());
+        // pmAddProductPage.addProductAttributesBox.click();
+        executor.executeScript("arguments[0].click();", pmAddProductPage.addProductAttributesBox);
+        executor.executeScript("arguments[0].click();", pmAddProductPage.attributesColorCheckBox);
+        // pmAddProductPage.attributesColorCheckBox.click();
+        selectColor = new Select(pmAddProductPage.attributesColorDropdown);
+        selectColor.selectByVisibleText("Blue");
+        // pmAddProductPage.attributesColorBox.sendKeys("Navy Blue");
+        reMethods.scrollDownActions();
+        pmAddProductPage.addProductSubmitButton.click();
 
     }
 

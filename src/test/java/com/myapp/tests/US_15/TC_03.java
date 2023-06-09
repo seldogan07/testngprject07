@@ -14,8 +14,8 @@ import org.testng.annotations.Test;
 2. Sign in
 3. Go to "Add New" page
 4. Scroll down to Shipping & click on
-5. Enter "Length", "Width" & "Height" values into relative "Dimensions (cm)" boxes
-6. Enter a weight value into "Dimensions (cm)" box
+5. Enter a weight value into "Weight (kg)" box
+6. Enter "Length", "Width" & "Height" values into relative "Dimensions (cm)" boxes
 7. Choose an option from "Shipping class" drop-down menu
 8. Choose an option from "Processing Time" drop-down menu
 9. Click on "SUBMIT" button on the right bottom corner
@@ -27,6 +27,8 @@ public class TC_03 {
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
     PearlyMarketAddProductPage pmAddProductPage = new PearlyMarketAddProductPage();
     JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+    Select selectShippingClass;
+    Select selectShippingProcessingtime;
 
     @Test
     public void addNewProductMenuTest(){
@@ -42,12 +44,18 @@ public class TC_03 {
         reMethods.scrollDownActions();
         reMethods.scrollDownActions();
 
-        Assert.assertTrue(pmAddProductPage.addProductInventoryBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductShippingBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductAttributesBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductLinkedBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductSEOBox.isDisplayed());
-        Assert.assertTrue(pmAddProductPage.addProductAdvancedBox.isDisplayed());
+        executor.executeScript("arguments[0].click();", pmAddProductPage.addProductShippingBox);
+        // pmAddProductPage.addProductShippingBox.click();
+        pmAddProductPage.shippingWeightBox.sendKeys("3");
+        pmAddProductPage.shippingLengthBox.sendKeys("33");
+        pmAddProductPage.shippingWidthBox.sendKeys("22");
+        pmAddProductPage.shippingHeightBox.sendKeys("11");
+        selectShippingClass = new Select(pmAddProductPage.shippingShippingclassDropdown);
+        selectShippingClass.selectByIndex(0);
+        reMethods.scrollDownActions();
+        selectShippingProcessingtime = new Select(pmAddProductPage.shippingProcessingtimeDropdown);
+        selectShippingProcessingtime.selectByIndex(1);
+        executor.executeScript("arguments[0].click();", pmAddProductPage.shippingSubmitButton);
 
     }
 
