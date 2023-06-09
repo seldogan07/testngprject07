@@ -128,6 +128,23 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//button[@data-taxonomy='product_brand']")
     public WebElement newProductAddButton;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[1]")
+    public WebElement addProductInventoryBox;
+
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[4]")
+    public WebElement addProductShippingBox;
+
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[5]")
+    public WebElement addProductAttributesBox;
+
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[7]")
+    public WebElement addProductLinkedBox;
+
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[8]")
+    public WebElement addProductSEOBox;
+
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[10]")
+    public WebElement addProductAdvancedBox;
 
 
 
