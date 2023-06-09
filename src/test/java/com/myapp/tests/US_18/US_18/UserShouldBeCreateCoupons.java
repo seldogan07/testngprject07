@@ -1,4 +1,4 @@
-package com.myapp.tests.US_17.US_18;
+package com.myapp.tests.US_18.US_18;
 
 
 
