@@ -128,20 +128,71 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//button[@data-taxonomy='product_brand']")
     public WebElement newProductAddButton;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[1]")
+    public WebElement addProductInventoryBox;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[4]")
+    public WebElement addProductShippingBox;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[5]")
+    public WebElement addProductAttributesBox;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[7]")
+    public WebElement addProductLinkedBox;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[8]")
+    public WebElement addProductSEOBox;
 
+    @FindBy(xpath="(//div[@class='page_collapsible_content_holder'])[10]")
+    public WebElement addProductAdvancedBox;
 
+    @FindBy(id="sku")
+    public WebElement skuValueBox;
+
+    @FindBy(id="manage_stock")
+    public WebElement manageStockClickBox;
+
+    @FindBy(id="stock_qty")
+    public WebElement stockqtyBox;
+
+    @FindBy(id="stock_status")
+    public WebElement stockstatusDropdown;
+
+    @FindBy(id="sold_individually")
+    public WebElement soldIndividuallyBox;
+
+    @FindBy(id="wcfm_products_simple_submit_button")
+    public WebElement addProductSubmitButton;
+
+    @FindBy(id="weight")
+    public WebElement shippingWeightBox;
+
+    @FindBy(id="length")
+    public WebElement shippingLengthBox;
+
+    @FindBy(id="width")
+    public WebElement shippingWidthBox;
+
+    @FindBy(id="height")
+    public WebElement shippingHeightBox;
+
+    @FindBy(id="shipping_class")
+    public WebElement shippingShippingclassDropdown;
+
+    @FindBy(id="_wcfmmp_processing_time")
+    public WebElement shippingProcessingtimeDropdown;
+
+    @FindBy(id="attributes_is_active_1")
+    public WebElement attributesColorCheckBox;
+
+    @FindBy(id="attributes_value_1")
+    public WebElement attributesColorDropdown;
+
+    @FindBy(id="wcfm_products_simple_submit_button")
+    public WebElement shippingSubmitButton;
 
     @FindBy(xpath="//input[@id='regular_price']")
     public WebElement addProductPriceBox;
-
-
-
-
-
 
 }
 
