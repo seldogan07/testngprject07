@@ -1,32 +1,55 @@
 package com.myapp.tests.US_18;
 
 
-import com.myapp.pages.My_Account_2Page;
-import com.myapp.pages.PearlyMarketHomePage;
-import com.myapp.pages.StoreManagerPage;
-import com.myapp.utilities.*;
 
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.interactions.Actions;
+import com.github.javafaker.DateAndTime;
+import com.github.javafaker.Faker;
+import com.myapp.pages.Manage_CouponPage;
+import com.myapp.pages.PearlyMarketHomePage;
+import com.myapp.utilities.*;
+import com.myapp.utilities.ConfigReader;
+import com.myapp.utilities.Driver;
+import com.myapp.utilities.JSUtils;
+
+import io.netty.util.internal.ThreadLocalRandom;
 import org.testng.annotations.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static java.lang.Long.parseLong;
 
 public class UserShouldBeCreateCoupons {
     @Test
-    public void createCoupon() throws InterruptedException {
+
+    public void createCoupon() throws Exception {
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
 
         PearlyMarketHomePage homePage=new PearlyMarketHomePage();
-
+        Manage_CouponPage manageCouponPage=new Manage_CouponPage();
         ReusableMethods reusableMethods=new ReusableMethods();
+        Faker faker=new Faker();
         reusableMethods.signIn();
+//        1_Go to https://pearlymarket.com/
 
-        JSUtils.clickWithTimeoutByJS(homePage.myAccountButton);
+//        2_User should navigate to Store Manager
+        reusableMethods.scrollPageEndActions();
+        homePage.myAccountButton.click();
+        homePage.storeManagerButton.click();
 
-        My_Account_2Page my_account_2Page=new My_Account_2Page();
+        JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
 
-        JSUtils.clickWithTimeoutByJS(my_account_2Page.storeManagerButton);
-        StoreManagerPage storeManagerPage=new StoreManagerPage();
-        Actions actions=new Actions(Driver.getDriver());
+        manageCouponPage.addCouponButton.click();
+        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
+        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
+        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
+        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
+        JSUtils.clickWithTimeoutByJS(manageCouponPage.expiryDate);
+        JSUtils.clickWithTimeoutByJS(manageCouponPage.submitButton);
+
+
+
+
 
     }
 }
