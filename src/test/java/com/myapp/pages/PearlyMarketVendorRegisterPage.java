@@ -7,8 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PearlyMarketVendorRegisterPage {
     public PearlyMarketVendorRegisterPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//input[@id='user_email']")
@@ -62,13 +61,9 @@ public class PearlyMarketVendorRegisterPage {
     @FindBy(xpath = "//*[text()='Please provide a valid email address.']")
     public WebElement invalidEmailText;
 
-    @FindBy(className = "wcfm-message wcfm-error")
+    @FindBy(xpath = "(//div[@tabindex='-1'])[2]")
     public WebElement unmatchedPassword;
     @FindBy(xpath = "//*[@class='wcicon-status-cancelled']")
     public WebElement alreadyExistMail;
-
-
-
-
 
 }
