@@ -27,10 +27,10 @@ public class SignUp {
 
         //Enter Username
 
-        PearlyMarketHomePage.usernameBox.sendKeys("Laurah34211");
+        PearlyMarketHomePage.usernameBox.sendKeys("Laurah34212");
 
         //Enter email add
-        PearlyMarketHomePage.emailBox.sendKeys("dcdce3f3g@gmail.com");
+        PearlyMarketHomePage.emailBox.sendKeys("dcdce3f5g@gmail.com");
 
         //Enter password
         PearlyMarketHomePage.signUpPasswordBox.sendKeys("123456");
