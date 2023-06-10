@@ -194,5 +194,11 @@ public class PearlyMarketAddProductPage {
     @FindBy(xpath="//input[@id='regular_price']")
     public WebElement addProductPriceBox;
 
+    @FindBy(xpath="//button[@class='button media-button button-primary button-large media-button-select']")
+    public WebElement selectButtonInMediaLibrary;
+
+    @FindBy(xpath="(//div[@class='thumbnail'])[8]")
+    public WebElement mediaLibrarySectionForGalary;
+
 }
 
