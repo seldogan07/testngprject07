@@ -43,20 +43,8 @@ public class TC_05 {
 
 //
 //        5_User should be able to select categories
-        // reMethods.scrollIntoView(pmAddProductPage.featuredImageBox);
-        executor.executeScript("arguments[0].click();", pearlyMarketAddProductPage.galaryImageBox);
-        // pearlyMarketAddProductPage.addToGalarySelectFileButton.click();
-        String image1_FilePath= System.getProperty("user.home") + "C:Masaüstü/flower.jpeg/";
-        pearlyMarketAddProductPage.addToGalarySelectFileButton.sendKeys(image1_FilePath);
-        pearlyMarketAddProductPage.mediaLibrarySection.click();
-        pearlyMarketAddProductPage.addToGalaryStoolImage.click();
-        pearlyMarketAddProductPage.addToGalaryButton.click();
-
-        pearlyMarketAddProductPage.featuredImageBox.click();
-        pearlyMarketAddProductPage.chooseImageStoolImage.click();
-        pearlyMarketAddProductPage.chooseImageSelectButton.click();
-
-//       pearlyMarketAddProductPage.kitchenButton.click();
+        reusableMethods.scrollDownActions();
+        pearlyMarketAddProductPage.applephoneCheckboxInCategories.click();
 
         takeScreenShot.takeScreenshotOfTheEntirePage();
 

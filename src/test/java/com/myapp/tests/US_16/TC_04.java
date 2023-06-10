@@ -39,7 +39,7 @@ public class TC_04 {
         pmHomePage.productsAddnewElement.click();
 
 //        5_When User write product title it should be seen in the box
-       pearlyMarketAddProductPage.productTitleBox.sendKeys("tea cup set");
+        pearlyMarketAddProductPage.productTitleBox.sendKeys("tea cup set");
 
         takeScreenShot.takeScreenshotOfTheEntirePage();
 

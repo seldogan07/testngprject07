@@ -47,7 +47,7 @@ public class TC_06 {
         pmHomePage.checkoutButton.click();
 
 //      7_Total amount should be visible.
-       takeScreenShot.takeScreenshotOfTheEntirePage();
+        takeScreenShot.takeScreenshotOfTheEntirePage();
 
 
 

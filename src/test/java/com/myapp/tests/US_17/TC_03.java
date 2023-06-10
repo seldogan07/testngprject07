@@ -37,6 +37,7 @@ public class TC_03 {
         pearlyMarketMyAccountPage.ordersLink.click();
 
 //      4_Then Click on GO SHOP button
+        reusableMethods.scrollPageEndActions();
         pearlyMarketMyAccountPage.goShopLink.click();
 
 //      5_Then user should click on Chart button
@@ -45,6 +46,8 @@ public class TC_03 {
 
 //      6_Then user should click on CHECKOUT button
         pmHomePage.checkoutButton.click();
+
+        takeScreenShot.takeScreenshotOfTheEntirePage();
 
     }
 }

@@ -49,7 +49,7 @@ public class TC_07 {
 
 //      7_Total amount should be visible.
         JSUtils.clickWithTimeoutByJS(pmHomePage.payAtTheDoorElement);
-       takeScreenShot.takeScreenshotOfTheEntirePage();
+        takeScreenShot.takeScreenshotOfTheEntirePage();
 
 
 
