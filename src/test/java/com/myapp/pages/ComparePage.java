@@ -38,4 +38,21 @@ public class ComparePage {
     @FindBy(xpath = "//a[@class='btn btn-dark btn-rounded']")
     public WebElement startCompare;
 
+    @FindBy(xpath = "//div[@data-product-id='14070']")
+    public WebElement item1;
+
+    @FindBy(xpath = "//a[@class='compare btn-product-icon']")
+    public WebElement item1compare;
+
+    @FindBy(xpath = "//div[@data-product-id='23246']")
+    public WebElement item2;
+
+    // BUG!! compare button görünür değil!
+    @FindBy(xpath = "//a[@class='compare btn-product-icon']")
+    public WebElement item2compare;
+
+    @FindBy(xpath = "(//a[@class='btn-remove remove_from_compare fas fa-times'])[1]")
+    public WebElement removeitem;
+
+
 }
