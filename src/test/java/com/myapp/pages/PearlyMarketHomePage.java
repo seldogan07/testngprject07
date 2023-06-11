@@ -102,5 +102,13 @@ public class PearlyMarketHomePage {
     public WebElement orderCompleteMessageElement;
     @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[7]/a/span[2]")
     public WebElement couponsButton;
+    @FindBy(id="coupon_code")
+    public WebElement couponCodeInput;
+    @FindBy(xpath = "//*[@id=\"cart_coupon_box\"]/div/button")
+    public WebElement applyCouponButton;
+    @FindBy(xpath = "//*[@id=\"wcfm-coupons\"]/tbody/tr[1]/td[1]/a")
+    public WebElement getCouponCode;
+    @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
+    public WebElement secondMyAccount;
 
 }
