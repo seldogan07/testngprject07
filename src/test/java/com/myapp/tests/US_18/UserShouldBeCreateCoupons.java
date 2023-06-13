@@ -1,32 +1,43 @@
 package com.myapp.tests.US_18;
 
 
-import com.myapp.pages.My_Account_2Page;
-import com.myapp.pages.PearlyMarketHomePage;
-import com.myapp.pages.StoreManagerPage;
-import com.myapp.utilities.*;
 
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.interactions.Actions;
+import com.github.javafaker.Faker;
+import com.myapp.pages.Manage_CouponPage;
+import com.myapp.pages.PearlyMarketHomePage;
+import com.myapp.utilities.*;
+import com.myapp.utilities.ConfigReader;
+import com.myapp.utilities.Driver;
+import com.myapp.utilities.JSUtils;
+
 import org.testng.annotations.Test;
 
 public class UserShouldBeCreateCoupons {
+    ReusableMethods reMethods = new ReusableMethods();
+    PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
+    Manage_CouponPage manageCouponPage=new Manage_CouponPage();
+    Faker faker=new Faker();
     @Test
-    public void createCoupon() throws InterruptedException {
+
+    public void createCoupon() throws Exception {
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
 
-        PearlyMarketHomePage homePage=new PearlyMarketHomePage();
+        reMethods.signIn();
 
-        ReusableMethods reusableMethods=new ReusableMethods();
-        reusableMethods.signIn();
+        pmHomePage.myAccountButton.click();
+        pmHomePage.storeManagerButton.click();
+        pmHomePage.myStoreProductsElement.click();
+        reMethods.hoverOverOnElementActions(pmHomePage.myStoreProductsElement);
+        pmHomePage.productsAddnewElement.click();
 
-        JSUtils.clickWithTimeoutByJS(homePage.myAccountButton);
+        JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
 
-        My_Account_2Page my_account_2Page=new My_Account_2Page();
+        manageCouponPage.addCouponButton.click();
+        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
+        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
+        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
+        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
 
-        JSUtils.clickWithTimeoutByJS(my_account_2Page.storeManagerButton);
-        StoreManagerPage storeManagerPage=new StoreManagerPage();
-        Actions actions=new Actions(Driver.getDriver());
 
     }
 }
