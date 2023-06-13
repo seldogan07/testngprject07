@@ -34,4 +34,18 @@ public class WishListPage {
     @FindBy(xpath = "(//a[@class='wishlist block-type'])[1]")
     public WebElement WishMainButton;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-3834\"]/a")
+    public WebElement Bookssection;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/div/div/div/div[4]/ul/li[1]/div/figure/a")
+    public WebElement firstitem;
+
+    @FindBy(xpath = "//a[@data-product-id='17550']")
+    public WebElement firstitemwishclick;
+
+    @FindBy(xpath = "//*[@id=\"yith-wcwl-row-17550\"]/td[5]/div/a")
+    public WebElement addToCard;
+
+
+
 }
