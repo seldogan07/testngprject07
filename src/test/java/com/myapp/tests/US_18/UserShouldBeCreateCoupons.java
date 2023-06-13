@@ -12,9 +12,15 @@ import com.myapp.utilities.Driver;
 import com.myapp.utilities.JSUtils;
 
 import io.netty.util.internal.ThreadLocalRandom;
+import net.bytebuddy.asm.Advice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static java.lang.Long.parseLong;
@@ -43,13 +49,36 @@ public class UserShouldBeCreateCoupons {
         manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
         manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
         reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
-        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
-        JSUtils.clickWithTimeoutByJS(manageCouponPage.expiryDate);
+        String paragraph=faker.bothify("##");
+        manageCouponPage.couponAmount.sendKeys(paragraph);
+        //JSUtils.clickWithTimeoutByJS(manageCouponPage.expiryDate);
+
+        //JSUtils.scrollIntoViewJS(manageCouponPage.expiryDate);
+        LocalDate randomDate=generateRandomDate();
+        String formattedDate = formatDate(randomDate, "yyyy/MM/dd");
+        manageCouponPage.expiryDate.sendKeys(formattedDate);
+        //JSUtils.clickWithTimeoutByJS(manageCouponPage.expiryDate);
+        if (!manageCouponPage.freeShippingCheck.isSelected()) {
+            JSUtils.clickWithTimeoutByJS(manageCouponPage.freeShippingCheck);
+        }
+        if (!manageCouponPage.showOnStoreCheck.isSelected()){
+            JSUtils.clickWithTimeoutByJS(manageCouponPage.showOnStoreCheck);
+        }
         JSUtils.clickWithTimeoutByJS(manageCouponPage.submitButton);
-
-
-
-
-
     }
-}
+    public LocalDate generateRandomDate() {
+        LocalDate startDate = LocalDate.now();
+        LocalDate endDate = LocalDate.of(2023, 12, 31);
+
+        long startEpochDay = startDate.toEpochDay();
+        long endEpochDay = endDate.toEpochDay();
+
+        long randomEpochDay = startEpochDay + (long) (Math.random() * (endEpochDay - startEpochDay));
+
+        return LocalDate.ofEpochDay(randomEpochDay);
+    }
+    public String formatDate(LocalDate date, String format) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        return date.format(formatter);
+    }
+        }

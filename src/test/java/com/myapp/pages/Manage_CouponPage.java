@@ -28,5 +28,11 @@ public class Manage_CouponPage {
     public WebElement dateTable;
     @FindBy(id = "wcfm_coupon_manager_submit_button")
     public WebElement submitButton;
+    @FindBy(xpath = "//*[@id=\"ui-datepicker-div\"]/table")
+    public WebElement dateField;
+    @FindBy(id = "free_shipping")
+    public WebElement freeShippingCheck;
+    @FindBy(id="show_on_store")
+    public WebElement showOnStoreCheck;
 
 }

@@ -1,9 +1,6 @@
 package com.myapp.utilities;
 
-import com.myapp.pages.My_Account_2Page;
-import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
-import com.myapp.pages.PearlyMarketRegisterPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -37,7 +34,7 @@ public class ReusableMethods {
         }
     }
 
-    public static String getTextWithTimeout(WebElement element, int timeout) {
+    public static String getTextWithTimeout(WebElement element, String paragraph, int timeout) {
         String text="";
         for (int i = 0; i < timeout; i++) {
             try {
