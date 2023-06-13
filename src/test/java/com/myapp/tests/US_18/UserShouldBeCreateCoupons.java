@@ -2,7 +2,8 @@ package com.myapp.tests.US_18;
 
 
 
-import com.github.javafaker.DateAndTime;
+
+
 import com.github.javafaker.Faker;
 import com.myapp.pages.Manage_CouponPage;
 import com.myapp.pages.PearlyMarketHomePage;
@@ -17,6 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -27,7 +29,12 @@ import java.util.Date;
 import static java.lang.Long.parseLong;
 
 public class UserShouldBeCreateCoupons {
+    ReusableMethods reMethods = new ReusableMethods();
+    PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
+    Manage_CouponPage manageCouponPage=new Manage_CouponPage();
+    Faker faker=new Faker();
     @Test
+
 
     public void createCoupon() throws Exception {
         PearlyMarketHomePage homePage=new PearlyMarketHomePage();
@@ -43,9 +50,16 @@ public class UserShouldBeCreateCoupons {
         homePage.myAccountButton.click();
         homePage.storeManagerButton.click();
 
+
         JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
 
         manageCouponPage.addCouponButton.click();
+
+        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
+        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
+        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
+        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
+
         String couponCode=faker.bothify("??????##").toUpperCase();
         manageCouponPage.couponCode.sendKeys(couponCode);
         manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
@@ -69,6 +83,7 @@ public class UserShouldBeCreateCoupons {
         assert message.equals("Coupon Successfully Published.");
 
         JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
+
 
 
     }
