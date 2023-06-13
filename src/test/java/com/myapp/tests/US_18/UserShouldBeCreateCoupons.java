@@ -61,16 +61,9 @@ public class UserShouldBeCreateCoupons {
         homePage.myAccountButton.click();
         homePage.storeManagerButton.click();
 
-
         JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
 
         manageCouponPage.addCouponButton.click();
-
-        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
-        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
-        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
-        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
-
         String couponCode=faker.bothify("??????##").toUpperCase();
         manageCouponPage.couponCode.sendKeys(couponCode);
         manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
