@@ -5,8 +5,7 @@ package com.myapp.tests.US_18;
 
 
 import com.github.javafaker.Faker;
-import com.myapp.pages.Manage_CouponPage;
-import com.myapp.pages.PearlyMarketHomePage;
+import com.myapp.pages.*;
 import com.myapp.utilities.*;
 import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
@@ -29,6 +28,12 @@ import java.util.Date;
 import static java.lang.Long.parseLong;
 
 public class UserShouldBeCreateCoupons {
+<<<<<<< HEAD
+
+
+
+    @Test
+=======
     ReusableMethods reMethods = new ReusableMethods();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
     Manage_CouponPage manageCouponPage=new Manage_CouponPage();
@@ -36,7 +41,9 @@ public class UserShouldBeCreateCoupons {
     @Test
 
 
+>>>>>>> master
     public void createCoupon() throws Exception {
+        Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage homePage=new PearlyMarketHomePage();
         Manage_CouponPage manageCouponPage=new Manage_CouponPage();
         ReusableMethods reusableMethods=new ReusableMethods();
@@ -44,7 +51,22 @@ public class UserShouldBeCreateCoupons {
         Faker faker=new Faker();
 
 //        1_Go to https://pearlymarket.com/
-        reusableMethods.signIn();
+        Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
+
+
+        My_Account_2Page my_account_2Page = new My_Account_2Page();
+
+        //        2_Click on Sign in
+        homePage.homePageSignInLink.click();
+
+//        3_User should enter Email
+        my_account_2Page.userName.sendKeys(ConfigReader.getProperty("PMValidUsername"));
+
+//        4_User should enter the password
+        my_account_2Page.password.sendKeys(ConfigReader.getProperty("PMValidPassword"));
+
+//        5_Click on SIGN In button
+        my_account_2Page.signIn.click();
 //        2_User should navigate to Store Manager
         reusableMethods.scrollPageEndActions();
         homePage.myAccountButton.click();
@@ -102,4 +124,4 @@ public class UserShouldBeCreateCoupons {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         return date.format(formatter);
     }
-        }
+}
