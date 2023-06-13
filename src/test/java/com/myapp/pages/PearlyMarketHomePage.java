@@ -117,5 +117,10 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
     public WebElement secondMyAccount;
 
+    @FindBy(xpath = "(//a[.='Electronics'])[1]")
+    public WebElement electronicsElements;
+    @FindBy(xpath = "(//*[.='Men'])[1]")
+    public WebElement MenElements;
+
 
 }
