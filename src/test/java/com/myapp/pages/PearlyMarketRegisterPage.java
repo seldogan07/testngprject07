@@ -24,4 +24,8 @@ public class PearlyMarketRegisterPage {
     @FindBy(id = "wcfm_membership_register_button")
     public WebElement registerButton;
 
+    @FindBy(partialLinkText = "Sign")
+    public WebElement signUpLink;
+
+
 }
