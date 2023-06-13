@@ -14,7 +14,6 @@ public class TC_002 {
     //6_Click wishlist buttons on the first product
     //7_Click the wishlist button on the page
     //8_Click Ouick View
-
     @Test
     public void wishListTest2() throws InterruptedException {
 
@@ -26,8 +25,6 @@ public class TC_002 {
         PearlyHomePage.loginButton.click();
 
         WaitUtils.waitFor(4);
-
-
         ReusableMethods reusableMethods = new ReusableMethods();
         PearlyHomePage.electronicsElements.click();
         WaitUtils.waitFor(7);
@@ -44,9 +41,5 @@ public class TC_002 {
         WaitUtils.waitFor(7);
         JSUtils.clickWithTimeoutByJS(wishListPage.Quickview);
         WaitUtils.waitFor(7);
-
-
-
-
     }
 }

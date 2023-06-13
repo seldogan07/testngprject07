@@ -26,7 +26,6 @@ public class TC_002 {
         PearlyHomePage.usernameBox.sendKeys("mercure");
         PearlyHomePage.passwordBox.sendKeys("mercure123");
         PearlyHomePage.loginButton.click();
-
         WaitUtils.waitFor(4);
 
         ReusableMethods reusableMethods = new ReusableMethods();
@@ -39,19 +38,18 @@ public class TC_002 {
         JSUtils.clickWithTimeoutByJS(comparePage.item1compare);
         WaitUtils.waitFor(6);
 
-        // Önceki sayfaya geri dön
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(7);
 
         comparePage.item2.click();
         WaitUtils.waitFor(7);
 
-        // BUG!! compare button görünür değil!
+        // BUG: Compare button is not visible!
         JSUtils.clickWithTimeoutByJS(comparePage.item2compare);
         WaitUtils.waitFor(6);
 
         JSUtils.clickWithTimeoutByJS(comparePage.removeitem);
         WaitUtils.waitFor(5);
-
     }
 }

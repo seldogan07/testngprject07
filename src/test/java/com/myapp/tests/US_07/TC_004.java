@@ -32,16 +32,12 @@ public class TC_004 {
 
         ComparePage comparePage = new ComparePage();
         comparePage.compare1.click();
-        //   JSUtils.clickWithTimeoutByJS(comparePage.compare1);
         WaitUtils.waitFor(5);
 
         JSUtils.clickWithTimeoutByJS(comparePage.compare1button);
-        // comparePage.compare1button.click();
         WaitUtils.waitFor(4);
 
         JSUtils.clickWithTimeoutByJS(comparePage.removeitem2);
         WaitUtils.waitFor(3);
-
-
     }
 }

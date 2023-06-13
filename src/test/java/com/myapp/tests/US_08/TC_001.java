@@ -25,25 +25,20 @@ public class TC_001 {
         PearlyHomePage.usernameBox.sendKeys("mercure");
         PearlyHomePage.passwordBox.sendKeys("mercure123");
         PearlyHomePage.loginButton.click();
-
         WaitUtils.waitFor(6);
-
-
         ReusableMethods reusableMethods = new ReusableMethods();
         PearlyHomePage.electronicsElements.click();
         WaitUtils.waitFor(9);
 
         ComparePage comparePage= new ComparePage();
-
         comparePage.compare1.click();
-        //JSUtils.clickWithTimeoutByJS(comparePage.compare1);
         WaitUtils.waitFor(9);
 
         WishListPage wishlist = new WishListPage();
         JSUtils.clickWithTimeoutByJS(wishlist.Wishclick);
         WaitUtils.waitFor(4);
 
-        // Önceki sayfaya geri dön
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(3);
 
@@ -52,7 +47,7 @@ public class TC_001 {
 
         JSUtils.clickWithTimeoutByJS(wishlist.Wishclick2);
         WaitUtils.waitFor(4);
-        // Önceki sayfaya geri dön
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(3);
 
@@ -63,15 +58,5 @@ public class TC_001 {
 
         JSUtils.clickWithTimeoutByJS(wishlist.WishMainButton);
         WaitUtils.waitFor(4);
-
-
-
-
-
-
-
-
-
-
     }
 }

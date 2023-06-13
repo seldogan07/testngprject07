@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class TC_001 {
 
     //   1_ Go to https://pearlymarket.com/
@@ -37,7 +35,6 @@ public class TC_001 {
         PearlyHomePage.usernameBox.sendKeys("mercure");
         PearlyHomePage.passwordBox.sendKeys("mercure123");
         PearlyHomePage.loginButton.click();
-
         WaitUtils.waitFor(4);
 
         ReusableMethods reusableMethods = new ReusableMethods();
@@ -49,14 +46,12 @@ public class TC_001 {
     public void electronicPage() throws InterruptedException {
         ComparePage comparePage= new ComparePage();
         comparePage.compare1.click();
-     //   JSUtils.clickWithTimeoutByJS(comparePage.compare1);
         WaitUtils.waitFor(5);
 
         JSUtils.clickWithTimeoutByJS(comparePage.compare1button);
-       // comparePage.compare1button.click();
         WaitUtils.waitFor(3);
 
-        // Önceki sayfaya geri dön
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(3);
 
@@ -64,7 +59,8 @@ public class TC_001 {
         WaitUtils.waitFor(3);
         JSUtils.clickWithTimeoutByJS(comparePage.compare2button);
         WaitUtils.waitFor(2);
-        // Önceki sayfaya geri dön
+
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(3);
 
@@ -72,29 +68,17 @@ public class TC_001 {
         WaitUtils.waitFor(2);
         JSUtils.clickWithTimeoutByJS(comparePage.compare3button);
         WaitUtils.waitFor(2);
-        // Önceki sayfaya geri dön
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(5);
 
-     //   Driver.getDriver().navigate().back();
-     //   WaitUtils.waitFor(5);
-
         ReusableMethods.scrollDownActions();
         WaitUtils.waitFor(4);
-
-     //   WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-     //  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='product-loop product-default content-center product type-product post-21695 status-publish instock product_cat-electronics has-post-thumbnail sale shipping-taxable purchasable product-type-simple']")));
-       // JSUtils.clickWithTimeoutByJS(comparePage.compare4);
-      comparePage.compare4.click();
-       // WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='Compare'][@data-product_id='21695']")));
+        comparePage.compare4.click();
         WaitUtils.waitFor(5);
-       JSUtils.clickWithTimeoutByJS(comparePage.compare4button);
-       WaitUtils.waitFor(5);
-
-       JSUtils.clickWithTimeoutByJS(comparePage.startCompare);
+        JSUtils.clickWithTimeoutByJS(comparePage.compare4button);
         WaitUtils.waitFor(5);
-
-
+        JSUtils.clickWithTimeoutByJS(comparePage.startCompare);
+        WaitUtils.waitFor(5);
     }
 }

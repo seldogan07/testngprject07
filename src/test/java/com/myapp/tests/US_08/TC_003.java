@@ -1,6 +1,5 @@
 package com.myapp.tests.US_08;
 
-import com.myapp.pages.ComparePage;
 import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.pages.WishListPage;
 import com.myapp.utilities.*;
@@ -44,12 +43,8 @@ public class TC_003 {
         JSUtils.clickWithTimeoutByJS(wishlist.WishMainButton);
         WaitUtils.waitFor(4);
 
-        // BUG : Add to card' buttonu çalışmıyor tekrar ürün sayfasına yönlendiriyor.
+        // BUG : The 'Add to cart' button does not work, it redirects to the product page again.
         JSUtils.clickWithTimeoutByJS(wishlist.addToCard);
         WaitUtils.waitFor(4);
-
-
-
-
     }
 }

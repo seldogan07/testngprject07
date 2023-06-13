@@ -16,12 +16,10 @@ public class PearlyMarketHomePage {
        After click to SignIn/Register then ALERT appears.
        And In Alert we have SIGN UP and SIGN IN parts
        */
-    //<<<<<<< HEAD
     @FindBy(xpath = "//span[text()='Sign In']")
     public WebElement homepageSignInButton;
     @FindBy(xpath = "//span[text()='Register']")
     public WebElement homepageRegisterButton;
-    //=======
 
     // ************** SIGN IN / SIGN UP **********
     @FindBy(xpath = "//input[@id='username']")// for SIGN IN & SIGN UP
@@ -40,7 +38,7 @@ public class PearlyMarketHomePage {
     public WebElement loginButton;
     @FindBy(xpath = "//button[@name='register']")// for SIGN UP
     public WebElement signUpButton;
-    // *********************************************
+
     @FindBy(xpath = "/html/body/div[2]/footer/div/section[2]/div/div[2]/div/section/div/div[2]/div/div[2]/div/nav/ul/li[4]")
     public WebElement myAccountButton;
     @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/']")
@@ -49,14 +47,10 @@ public class PearlyMarketHomePage {
     public WebElement myStoreProductsElement;
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
-    //*********************************
+
     @FindBy(xpath = "(//a[.='Electronics'])[1]")
     public WebElement electronicsElements;
     @FindBy(xpath = "(//*[.='Men'])[1]")
     public WebElement MenElements;
-
-
-
-
 
 }

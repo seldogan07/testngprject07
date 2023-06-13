@@ -5,8 +5,6 @@ import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.utilities.*;
 import org.testng.annotations.Test;
 
-import java.util.jar.JarEntry;
-
 public class TC_003 {
     //1_ Go to https://pearlymarket.com/
     //2_Click see all button on Trending section
@@ -27,9 +25,11 @@ public class TC_003 {
         WaitUtils.waitFor(4);
         comparePage.trend1.click();
         WaitUtils.waitFor(7);
-        //BUG : Compare Button görünür değil!!
+
+        // BUG: Compare button is not visible!
         JSUtils.clickWithTimeoutByJS(comparePage.trend1button);
-        // Önceki sayfaya geri dön
+
+        // Back to previous page
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(6);
 
