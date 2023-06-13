@@ -4,9 +4,12 @@ import com.myapp.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 
 
 public class PearlyMarketHomePage {
+
+
     public PearlyMarketHomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
 
@@ -37,7 +40,9 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//button[@name='login']") // for SIGN IN
     public WebElement loginButton;
     @FindBy(xpath = "//button[@name='register']")// for SIGN UP
-    public static WebElement signUpButton;
+    public WebElement signUpButton;
+
+
     // *********************************************
     @FindBy(xpath = "/html/body/div[2]/footer/div/section[2]/div/div[2]/div/section/div/div[2]/div/div[2]/div/nav/ul/li[4]")
     public WebElement myAccountButton;
@@ -47,6 +52,7 @@ public class PearlyMarketHomePage {
     public WebElement myStoreProductsElement;
     @FindBy(xpath = "(//span[@class='text'])[18]")
     public WebElement productsAddnewElement;
+
     @FindBy(xpath = "//span[text()='Sign In']")
     public WebElement homePageSignInLink;
     @FindBy(xpath = "//span[text()='Sign Out']")
@@ -110,5 +116,11 @@ public class PearlyMarketHomePage {
     public WebElement getCouponCode;
     @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
     public WebElement secondMyAccount;
+
+    @FindBy(xpath = "(//a[.='Electronics'])[1]")
+    public WebElement electronicsElements;
+    @FindBy(xpath = "(//*[.='Men'])[1]")
+    public WebElement MenElements;
+
 
 }
