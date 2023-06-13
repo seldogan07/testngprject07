@@ -28,20 +28,9 @@ import java.util.Date;
 import static java.lang.Long.parseLong;
 
 public class UserShouldBeCreateCoupons {
-<<<<<<< HEAD
-
-
 
     @Test
-=======
-    ReusableMethods reMethods = new ReusableMethods();
-    PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
-    Manage_CouponPage manageCouponPage=new Manage_CouponPage();
-    Faker faker=new Faker();
-    @Test
 
-
->>>>>>> master
     public void createCoupon() throws Exception {
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage homePage=new PearlyMarketHomePage();
