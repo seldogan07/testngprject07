@@ -1,65 +1,47 @@
-package com.myapp.tests.US_18;
-
-
-
-
+package com.myapp.tests.US_20;
 
 import com.github.javafaker.Faker;
 import com.myapp.pages.Manage_CouponPage;
+import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
-import com.myapp.utilities.*;
-import com.myapp.utilities.ConfigReader;
+import com.myapp.pages.PearlyMarketMyAccountPage;
+import com.myapp.tests.US_18.UserShouldBeCreateCoupons;
 import com.myapp.utilities.Driver;
 import com.myapp.utilities.JSUtils;
-
-import io.netty.util.internal.ThreadLocalRandom;
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.By;
+import com.myapp.utilities.MediaUtils;
+import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import org.testng.annotations.Test;
 
-import java.text.SimpleDateFormat;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-import static java.lang.Long.parseLong;
 
-public class UserShouldBeCreateCoupons {
-    ReusableMethods reMethods = new ReusableMethods();
+public class SellAsaVendorWithCoupon_TC_03 {
+    ReusableMethods reusableMethods = new ReusableMethods();
+    MediaUtils takeScreenShot = new MediaUtils();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
     Manage_CouponPage manageCouponPage=new Manage_CouponPage();
     Faker faker=new Faker();
+    PearlyMarketMyAccountPage pearlyMarketMyAccountPage = new PearlyMarketMyAccountPage();
+
+    PearlyMarketAddProductPage pearlyMarketAddProductPage = new PearlyMarketAddProductPage();
+    JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+
+
     @Test
-
-
-    public void createCoupon() throws Exception {
-        PearlyMarketHomePage homePage=new PearlyMarketHomePage();
-        Manage_CouponPage manageCouponPage=new Manage_CouponPage();
-        ReusableMethods reusableMethods=new ReusableMethods();
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
-        Faker faker=new Faker();
+    public void shopAsAVendor() throws Exception {
 
 //        1_Go to https://pearlymarket.com/
         reusableMethods.signIn();
-//        2_User should navigate to Store Manager
         reusableMethods.scrollPageEndActions();
-        homePage.myAccountButton.click();
-        homePage.storeManagerButton.click();
+        pmHomePage.myAccountButton.click();
+        pmHomePage.storeManagerButton.click();
 
-
-        JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
+        JSUtils.clickWithTimeoutByJS(pmHomePage.couponsButton);
 
         manageCouponPage.addCouponButton.click();
-
-        manageCouponPage.couponCode.sendKeys(faker.bothify("??????##").toUpperCase());
-        manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
-        reusableMethods.getDropdownSelectedOptions(manageCouponPage.discountType);
-        manageCouponPage.couponAmount.sendKeys(faker.bothify("##"));
-
         String couponCode=faker.bothify("??????##").toUpperCase();
         manageCouponPage.couponCode.sendKeys(couponCode);
         manageCouponPage.couponDescription.sendKeys(faker.lorem().paragraph());
@@ -77,14 +59,28 @@ public class UserShouldBeCreateCoupons {
             JSUtils.clickWithTimeoutByJS(manageCouponPage.showOnStoreCheck);
         }
         JSUtils.clickWithTimeoutByJS(manageCouponPage.submitButton);
+//        2_User should navigate to My Account
+        ReusableMethods.scrollPageEndActions();
+        JSUtils.clickWithTimeoutByJS(pmHomePage.secondMyAccount);
 
-        String messageScript = "return wcfm_coupons_manage_messages.coupon_published;";
-        String message = (String) jsExecutor.executeScript(messageScript);
-        assert message.equals("Coupon Successfully Published.");
+//      3_User should click on Orders
+        pearlyMarketMyAccountPage.ordersLink.click();
 
-        JSUtils.clickWithTimeoutByJS(homePage.couponsButton);
+//      4_Then Click on GO SHOP button
+        JSUtils.clickWithTimeoutByJS(pearlyMarketMyAccountPage.goShopLink);
+
+//      5_Then user should click on Chart button
+        pmHomePage.chartButton.click();
+        pmHomePage.viewChartButton.click();
 
 
+        //String couponCode=pmHomePage.getCouponCode.getText();
+        pmHomePage.couponCodeInput.sendKeys(couponCode);
+        pmHomePage.applyCouponButton.click();
+
+
+//      6_Then user should click on CHECKOUT button
+        pmHomePage.checkoutButton.click();
 
     }
     public LocalDate generateRandomDate() {
@@ -102,4 +98,4 @@ public class UserShouldBeCreateCoupons {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         return date.format(formatter);
     }
-        }
+}

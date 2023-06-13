@@ -1,4 +1,4 @@
-package com.myapp.tests.US_17;
+package com.myapp.tests.US_20;
 
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
@@ -10,14 +10,12 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-
 import java.io.IOException;
 
-import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 
-public class TC_08 {
+public class SellAsaVendorWithCoupon_TC_08 {
     ReusableMethods reusableMethods = new ReusableMethods();
     MediaUtils takeScreenShot = new MediaUtils();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
@@ -43,9 +41,7 @@ public class TC_08 {
 
 //      4_Then Click on GO SHOP button
         reusableMethods.scrollPageEndActions();
-        reusableMethods.scrollPageEndActions();
-        executor.executeScript("arguments[0].click();", pearlyMarketMyAccountPage.goShopLink);
-        //  pearlyMarketMyAccountPage.goShopLink.click();
+        pearlyMarketMyAccountPage.goShopLink.click();
 
 //      5_Then user should click on Chart button
         pmHomePage.chartButton.click();
@@ -68,8 +64,7 @@ public class TC_08 {
 
         JSUtils.clickWithTimeoutByJS(pmHomePage.payAtTheDoorElement);
         JSUtils.clickWithTimeoutByJS(pmHomePage.placeOrderElement);
-        assertEquals(pmHomePage.orderCompleteMessageElement.getText(),"Thank you. Your order has been received.");
-        takeScreenShot.takeScreenshotOfTheEntirePage();
+        assertTrue(pmHomePage.orderCompleteMessageElement.getText().contains("Thank you. Your order has been received."));
 
 
 

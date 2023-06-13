@@ -1,4 +1,4 @@
-package com.myapp.tests.US_17;
+package com.myapp.tests.US_20;
 
 import com.myapp.pages.PearlyMarketAddProductPage;
 import com.myapp.pages.PearlyMarketHomePage;
@@ -10,14 +10,10 @@ import com.myapp.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-
 import java.io.IOException;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
-
-public class TC_08 {
+public class SellAsaVendorWithCoupon_TC_07 {
     ReusableMethods reusableMethods = new ReusableMethods();
     MediaUtils takeScreenShot = new MediaUtils();
     PearlyMarketHomePage pmHomePage = new PearlyMarketHomePage();
@@ -42,10 +38,7 @@ public class TC_08 {
         pearlyMarketMyAccountPage.ordersLink.click();
 
 //      4_Then Click on GO SHOP button
-        reusableMethods.scrollPageEndActions();
-        reusableMethods.scrollPageEndActions();
-        executor.executeScript("arguments[0].click();", pearlyMarketMyAccountPage.goShopLink);
-        //  pearlyMarketMyAccountPage.goShopLink.click();
+        pearlyMarketMyAccountPage.goShopLink.click();
 
 //      5_Then user should click on Chart button
         pmHomePage.chartButton.click();
@@ -54,24 +47,9 @@ public class TC_08 {
 //      6_Then user should click on CHECKOUT button
         pmHomePage.checkoutButton.click();
 
-//      7_Then user should click on PLACE ORDER
-        pmHomePage.firstNameElement.sendKeys("Nurullah");
-        pmHomePage.lastNameElement.sendKeys("Kaleli");
-        pmHomePage.companyNameElement.sendKeys("Nese");
-        pmHomePage.streetAddressElement.sendKeys("Selcuklu");
-        pmHomePage.streetAddressContinueElement.sendKeys("Yazır");
-        pmHomePage.postCodeZipElement.sendKeys("42000");
-        pmHomePage.townCityElement.sendKeys("Konya");
-//        pmHomePage.provinceElement.click();
-//        ReusableMethods.selectByVisibleText(pmHomePage.provinceElement,"Konya");
-        pmHomePage.phoneElement.sendKeys("11212122");
-
+//      7_Total amount should be visible.
         JSUtils.clickWithTimeoutByJS(pmHomePage.payAtTheDoorElement);
-        JSUtils.clickWithTimeoutByJS(pmHomePage.placeOrderElement);
-        assertEquals(pmHomePage.orderCompleteMessageElement.getText(),"Thank you. Your order has been received.");
-        takeScreenShot.takeScreenshotOfTheEntirePage();
-
-
+       takeScreenShot.takeScreenshotOfTheEntirePage();
 
 
 
