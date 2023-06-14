@@ -121,6 +121,12 @@ public class PearlyMarketHomePage {
     public WebElement electronicsElements;
     @FindBy(xpath = "(//*[.='Men'])[1]")
     public WebElement MenElements;
+    @FindBy(xpath = "//*[@id=\"wcfm-products\"]/tbody/tr[1]/td[12]/a[2]/span")
+    public WebElement viewButton;
+    @FindBy(xpath = "//*[@id=\"wcfm-coupons\"]/tbody/tr[1]/td[1]/a")
+    public WebElement couponCodeGet;
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[5]/a/span[2]")
+    public WebElement couponProductName;
 
 
 }
