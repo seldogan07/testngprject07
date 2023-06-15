@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_10 {
 
     @Test
-    public void US11_TC08_NGT(){
+    public void US11_TC10_NGT(){
 
         //    1_Go to https://pearlymarket.com/
 
