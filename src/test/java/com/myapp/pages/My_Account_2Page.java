@@ -26,6 +26,8 @@ public class My_Account_2Page {
 
     @FindBy(xpath = "//*[text()='Sign Out']")
     public WebElement signOut;
+    @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
+    public WebElement twoMyAccount;
 
 
 }

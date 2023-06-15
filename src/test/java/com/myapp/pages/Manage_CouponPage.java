@@ -36,5 +36,6 @@ public class Manage_CouponPage {
     public WebElement showOnStoreCheck;
     @FindBy(xpath = "/html/body/div[1]/main/div/div/div/div/div[1]/div[2]/div[2]/div[2]/h2")
     public WebElement couponList;
+    
 
 }
