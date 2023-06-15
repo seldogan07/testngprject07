@@ -16,7 +16,6 @@ public class TC_03 {
 
         //    1_Go to https://pearlymarket.com/
 
-
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage pearlyMarketHomePage = new PearlyMarketHomePage();
         PearlyMarketRegisterPage pearlyMarketRegisterPage = new PearlyMarketRegisterPage();

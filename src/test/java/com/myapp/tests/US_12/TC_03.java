@@ -15,18 +15,9 @@ public class TC_03 {
 //    4_Click on Addresses
 //5_Then click on Add below Billing Address
 //6_The registered email must be filled automatically. (it passed)
-//7_Red dotted fields must be filled  ()
+//7_Red dotted fields must be filled.
 //8_Then Save Address button must be click.
 //9_Address should be added.
-
-    //we created for our project to github. we uploaded our test results
-    // and the time taken for this project to jira.
-    // We informed the project owner.
-    // In my part of the project there is sign in part for vendors and addresses
-    //there is a problem here after the user sign in
-    // we cannot see dashboard and other options and my account words on the top
-    // For addresses the registered email seen automatically
-    //when we stay empty there have to be errors and the test passed for this too
 
     @Test
     public void US12_TC03(){
