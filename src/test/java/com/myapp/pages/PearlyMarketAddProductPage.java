@@ -15,8 +15,10 @@ public class PearlyMarketAddProductPage {
     // public WebElement registerButton;
     @FindBy(xpath="//span[@class='wcfm_sub_menu_items wcfm_sub_menu_items_product_manage moz_class']")
     public WebElement productsAddNewButton;
-
-
+    @FindBy(xpath = "//*[@name='add-to-cart']")
+    public WebElement addToCart;
+    @FindBy(xpath = "(//input[@type='search'])[1]")
+    public WebElement searchBox;
 
 
 

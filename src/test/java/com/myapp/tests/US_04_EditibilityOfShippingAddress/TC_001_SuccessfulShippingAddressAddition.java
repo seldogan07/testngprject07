@@ -9,6 +9,7 @@ import com.myapp.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.myapp.utilities.Driver.*;
@@ -27,6 +28,7 @@ public class TC_001_SuccessfulShippingAddressAddition {
     String username;
     String email;
     String password;
+
     @Test(priority = 1)
     public void signUpAndSignInTest() throws Exception {
        // Objects and variables creation
@@ -112,7 +114,7 @@ public class TC_001_SuccessfulShippingAddressAddition {
         assertEquals(cityName+",",Driver.getDriver().findElement(By.xpath("(//td)[6]")).getText());
         assertEquals(country,Driver.getDriver().findElement(By.xpath("(//td)[7]")).getText());
         assertEquals(zipCode.replaceAll("[^0-9]", ""),Driver.getDriver().findElement(By.xpath("(//td)[8]")).getText());
-        passAndCaptureScreenshot("TC_004_Edit Existing Shipping Address... is done ");
+        passAndCaptureScreenshot("TC_001_Successful Shipping Address Addition... is done ");
         flush();
         Driver.closeDriver();
     }

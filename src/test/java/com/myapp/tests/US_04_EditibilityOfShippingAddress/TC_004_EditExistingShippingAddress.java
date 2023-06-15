@@ -137,6 +137,7 @@ public class TC_004_EditExistingShippingAddress {
         //7. Ensure that the entered details match the saved address.
         passAndCaptureScreenshot("Ensures that the entered details match the saved address... ");
         assertEquals(firstName+" "+lastName,Driver.getDriver().findElement(By.xpath("(//td)[4]")).getText());
+        passAndCaptureScreenshot("TC_004_Edit Existing Shipping Address... is done ");
 
         Driver.closeDriver();
     }
