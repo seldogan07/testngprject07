@@ -43,8 +43,8 @@ public class TC_01 {
 //        6_‘My Account’ on the page should appear
         pearlyMarketMyAccountPage.myAccountText.isDisplayed();
 
-    }
 
-
+        }
 
 }
+

@@ -12,7 +12,7 @@ public class TC_01 {
 //    2_User should enter Email
 //3_User should enter the password
 //4_Click on SIGN IN button
-//        6_Click on Sign Out button
+//        6_Click on Sign Out button BUG!!!
 //5_Dashboard and options below should appear
 //6_Click on Addresses
 //7_Then click on Add below Billing Address

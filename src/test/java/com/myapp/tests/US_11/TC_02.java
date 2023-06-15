@@ -39,8 +39,8 @@ public class TC_02 {
 //        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        6_Click on Sign Out button
-        pearlyMarketHomePage.signOutLink.click();
+//        6_Click on Sign Out button  BUG!
+         pearlyMarketHomePage.signOutLink.click();
 
 //        6_Dashboard and options below should appear
         pearlyMarketMyAccountPage.dashboardLink.isDisplayed();

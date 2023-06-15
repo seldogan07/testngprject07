@@ -38,7 +38,7 @@ public void US13_TC01(){
 //        5_Click on SIGN In button
     my_account_2Page.signIn.click();
 
-//        6_Click on Sign Out button
+//        6_Click on Sign Out button BUG!!
     pearlyMarketHomePage.signOutLink.click();
 
 //        7_‘My Account’ on the page should appear
@@ -50,7 +50,7 @@ public void US13_TC01(){
 //        9_Then click on Add below Shipping Address
     addressesPage.addShippingButton.click();
 
-//    6_Red dotted fields will be leaved
+//    6_Red dotted fields will be leave empty.
 //    7_Then click on Add below Shipping Address
     addressesPage.addShippingButton.click();
 
@@ -62,7 +62,6 @@ public void US13_TC01(){
     addressesPage.cityRequiredText.isDisplayed();
     addressesPage.stateRequiredText.isDisplayed();
     addressesPage.postCodeRequiredText.isDisplayed();
-
 
 }
 }
