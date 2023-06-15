@@ -8,10 +8,10 @@ import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class TC_07 {
+public class TC_10 {
 
     @Test
-    public void US11_TC07_NGT(){
+    public void US11_TC08_NGT(){
 
         //    1_Go to https://pearlymarket.com/
 
@@ -21,22 +21,22 @@ public class TC_07 {
         PearlyMarketMyAccountPage pearlyMarketMyAccountPage = new PearlyMarketMyAccountPage();
         My_Account_2Page my_account_2Page = new My_Account_2Page();
 
-//        2_Click on Sign in.
+//        2_Click on Sign in
         pearlyMarketHomePage.homePageSignInLink.click();
 
-//        3_User should enter Email.
+//        3_User should enter Email
         my_account_2Page.userName.sendKeys(ConfigReader.getProperty("PMValidUsername"));
 
-//        4_User should enter the password.
+//        4_User should enter the password
         my_account_2Page.password.sendKeys(ConfigReader.getProperty("PMValidPassword"));
 
-//        5_Click on SIGN In button.
+//        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//    6_ "Account details" could not appear if user does not click Sign out
-        pearlyMarketMyAccountPage.accountDetailsLink.isDisplayed();
-
+//    6. Chatbox on the page could not appear if user does not click Sign out
+        pearlyMarketMyAccountPage.followingsLink.isDisplayed();
     }
 }
+
 
 

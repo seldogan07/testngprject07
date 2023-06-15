@@ -14,7 +14,6 @@ public class TC_06 {
 
         //    1_Go to https://pearlymarket.com/
 
-
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage pearlyMarketHomePage = new PearlyMarketHomePage();
         PearlyMarketRegisterPage pearlyMarketRegisterPage = new PearlyMarketRegisterPage();
@@ -22,26 +21,20 @@ public class TC_06 {
         My_Account_2Page my_account_2Page = new My_Account_2Page();
 
 //        2_Click on Sign in
+
         pearlyMarketHomePage.homePageSignInLink.click();
 
-//        3_User should enter Email
+//        3_User should enter Email.
         my_account_2Page.userName.sendKeys(ConfigReader.getProperty("PMValidUsername"));
 
-//        4_User should enter the password
+//        4_User should enter the password.
         my_account_2Page.password.sendKeys(ConfigReader.getProperty("PMValidPassword"));
 
-//        5_Click on SIGN In button
+//        5_Click on SIGN In button.
         my_account_2Page.signIn.click();
 
 //    6_ Store Manager could not appear if user does not click Sign out
         pearlyMarketMyAccountPage.storeManagerLink.isDisplayed();
-
-
-
-
-
-
-
 
 
     }

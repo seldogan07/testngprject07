@@ -8,10 +8,9 @@ import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class TC_07 {
-
+public class TC_09 {
     @Test
-    public void US11_TC07_NGT(){
+    public void US11_TC09_NGT(){
 
         //    1_Go to https://pearlymarket.com/
 
@@ -33,10 +32,10 @@ public class TC_07 {
 //        5_Click on SIGN In button.
         my_account_2Page.signIn.click();
 
-//    6_ "Account details" could not appear if user does not click Sign out
-        pearlyMarketMyAccountPage.accountDetailsLink.isDisplayed();
-
+//    6. Wishlist on the page could not appear if user does not click Sign out
+        pearlyMarketMyAccountPage.wishlistLink.isDisplayed();
     }
 }
+
 
 
