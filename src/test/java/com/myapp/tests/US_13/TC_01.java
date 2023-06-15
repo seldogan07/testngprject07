@@ -16,7 +16,7 @@ public class TC_01 {
 //5_Then click on Add below Shipping Address
 //6_Red dotted fields must be filled
 //        11_Click "Save Address" button
-//        12_Verify that shippinn address should be visible
+//        12_Verify that shipping address should be visible
 
     @Test
     public void US13_TC01(){
@@ -39,7 +39,7 @@ public class TC_01 {
 //        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        6_Click on Sign Out button
+//        6_Click on Sign Out button  BUG!!
         pearlyMarketHomePage.signOutLink.click();
 
 //        7_‘My Account’ on the page should appear

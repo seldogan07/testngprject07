@@ -8,18 +8,11 @@ import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class TC_01 {
-//    1_Go to https://pearlymarket.com/
-//    2_Click on Sign in
-//    3_User should enter Email
-//    4_User should enter the password
-//    5_Click on SIGN In button
-//    6_‘My Account’ on the page should appear
-
+public class TC_06 {
     @Test
-    public void US11_TC01(){
+    public void US11_TC06_NGT(){
 
-//        1_Go to https://pearlymarket.com/
+        //    1_Go to https://pearlymarket.com/
 
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
@@ -40,11 +33,16 @@ public class TC_01 {
 //        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        6_‘My Account’ on the page should appear
-        pearlyMarketMyAccountPage.myAccountText.isDisplayed();
+//    6_ Store Manager could not appear if user does not click Sign out
+        pearlyMarketMyAccountPage.storeManagerLink.isDisplayed();
 
 
-        }
 
+
+
+
+
+
+
+    }
 }
-
