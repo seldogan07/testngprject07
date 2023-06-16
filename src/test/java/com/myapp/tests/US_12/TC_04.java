@@ -6,15 +6,11 @@ import com.myapp.pages.PearlyMarketHomePage;
 import com.myapp.pages.PearlyMarketMyAccountPage;
 import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
-import com.myapp.utilities.ReusableMethods;
 import org.testng.annotations.Test;
 
-public class TC_02 {
-
-
+public class TC_04 {
     @Test
-    public void US12_TC02(){
-
+    public void US12_TC04(){
 //        1_Go to https://pearlymarket.com/
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage pearlyMarketHomePage = new PearlyMarketHomePage();
@@ -22,32 +18,41 @@ public class TC_02 {
         My_Account_2Page my_account_2Page = new My_Account_2Page();
         AddressesPage addressesPage = new AddressesPage();
 
-//        2_Click on Sign in.
+//        2_Click on Sign in
         pearlyMarketHomePage.homePageSignInLink.click();
+
+//        3_User should enter Email
         my_account_2Page.userName.sendKeys("isam.young@fullangle.org");
-        my_account_2Page.password.sendKeys("Meyra123!");
+
+//        4_User should enter the password
+        my_account_2Page.password.sendKeys("password123");
+
+//        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        3_Click on Sign Out button.
+//        6_Click on Sign Out button BUG!!
         pearlyMarketHomePage.signOutLink.click();
 
-//        4_Dashboard and options below should appear.
+//        7_‘My Account’ on the page should appear
         pearlyMarketMyAccountPage.myAccountText.isDisplayed();
 
-//        5_Click on Addresses.
+//        8_Click on Addresses
         pearlyMarketMyAccountPage.addressesLink.click();
 
-//        6_Then click on Add below Billing Address.
+//       9_Red dotted fields will be leaved
+
         addressesPage.addBillingButton.click();
 
-//        7_The registered email must be filled automatically.
-//        String billingEmail=ConfigReader.getProperty("billing_email").toString();
-        addressesPage.billingEmail.getText().contains("@");
+//      10_Verify that required parts should be visible.
 
-        //8_Red dotted fields must be filled.
-
-        addressesPage.billingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
-        addressesPage.billingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
+        addressesPage.firstNameRequiredText.isDisplayed();
+        addressesPage.lastNameRequiredText.isDisplayed();
+        addressesPage.countryRequiredText.isDisplayed();
+        addressesPage.addressRequiredText.isDisplayed();
+        addressesPage.cityRequiredText.isDisplayed();
+        addressesPage.stateRequiredText.isDisplayed();
+        addressesPage.postCodeRequiredText.isDisplayed();
 
     }
 }
+

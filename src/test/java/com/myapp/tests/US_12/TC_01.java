@@ -42,7 +42,5 @@ public void US12_TC02(){
 //        String billingEmail=ConfigReader.getProperty("billing_email").toString();
     addressesPage.billingEmail.getText().contains("@");
 
-
-}
-
+    }
 }
