@@ -9,14 +9,6 @@ import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
 public class TC_01 {
-//    1_Go to https://pearlymarket.com/
-//            2_User should SIGN IN
-//3_Dashboard and options below should appear
-//4_Click on Addresses
-//5_Then click on Add below Shipping Address
-//6_Red dotted fields must be filled
-//        11_Click "Save Address" button
-//        12_Verify that shipping address should be visible
 
     @Test
     public void US13_TC01(){
@@ -51,23 +43,10 @@ public class TC_01 {
 //        9_Then click on Add below Shipping Address
         addressesPage.addShippingButton.click();
 
-//        10_Red dotted fields must be filled
-        addressesPage.shippingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
-        addressesPage.shippingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
-//        ReusableMethods.selectByVisibleText(addressesPage.billingCountry,"Iceland");
-        addressesPage.shippingStreetAddress.sendKeys(ConfigReader.getProperty("billing_streetaddress"));
-        addressesPage.shippingZipCode.sendKeys(ConfigReader.getProperty("billing_zipcode"));
-        addressesPage.shippingCity.sendKeys(ConfigReader.getProperty("billing_city"));
+//        10_The registered email must be filled automatically.
+        String shippingEmail= ConfigReader.getProperty("billing_email").toString();
 
-//        11_Click "Save Address" button
-        addressesPage.shippingSaveAddressButton.click();
-
-//        12_Verify that shipping address should be visible
-        addressesPage.editShippingAddress.isDisplayed();
-
-
-
-
+        addressesPage.billingEmail.getText().contains("@");
 
     }
 }
