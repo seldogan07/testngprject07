@@ -1,4 +1,4 @@
-package com.myapp.tests.US_12;
+package com.myapp.tests.US_13;
 
 import com.myapp.pages.AddressesPage;
 import com.myapp.pages.My_Account_2Page;
@@ -8,12 +8,11 @@ import com.myapp.utilities.ConfigReader;
 import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class TC_03 {
+public class TC_04 {
 
 
     @Test
-    public void US12_TC03(){
-
+    public void US13_TC04(){
 //        1_Go to https://pearlymarket.com/
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarket_homepage_url"));
         PearlyMarketHomePage pearlyMarketHomePage = new PearlyMarketHomePage();
@@ -33,7 +32,7 @@ public class TC_03 {
 //        5_Click on SIGN In button
         my_account_2Page.signIn.click();
 
-//        6_Click on Sign Out button
+//        6_Click on Sign Out button  BUG!!
         pearlyMarketHomePage.signOutLink.click();
 
 //        7_‘My Account’ on the page should appear
@@ -42,25 +41,23 @@ public class TC_03 {
 //        8_Click on Addresses
         pearlyMarketMyAccountPage.addressesLink.click();
 
-//        9_Then click on Add below Billing Address
-        addressesPage.addBillingButton.click();
+//        9_Then click on Add below Shipping Address
+        addressesPage.addShippingButton.click();
 
 //        10_Red dotted fields must be filled
-        addressesPage.billingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
-        addressesPage.billingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
+        addressesPage.shippingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
+        addressesPage.shippingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
 //        ReusableMethods.selectByVisibleText(addressesPage.billingCountry,"Iceland");
-        addressesPage.billingStreetAddress.sendKeys(ConfigReader.getProperty("billing_streetaddress"));
-        addressesPage.billingZipCode.sendKeys(ConfigReader.getProperty("billing_zipcode"));
-        addressesPage.billingCity.sendKeys(ConfigReader.getProperty("billing_city"));
-        addressesPage.billingPhone.sendKeys(ConfigReader.getProperty("billing_phone"));
+        addressesPage.shippingStreetAddress.sendKeys(ConfigReader.getProperty("billing_streetaddress"));
+        addressesPage.shippingZipCode.sendKeys(ConfigReader.getProperty("billing_zipcode"));
+        addressesPage.shippingCity.sendKeys(ConfigReader.getProperty("billing_city"));
 
-//       11_Then Save Address button must be click.
-        addressesPage.billingSaveAddressButton.click();
+//        11_Click "Save Address" button
+        addressesPage.shippingSaveAddressButton.click();
 
-//        12_Address should be added.
-        addressesPage.editBillingAddress.isDisplayed();
+//        12_Verify that shipping address should be visible
+        addressesPage.editShippingAddress.isDisplayed();
 
-
+    }
 }
 
-}

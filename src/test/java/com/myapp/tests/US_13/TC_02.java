@@ -9,14 +9,7 @@ import com.myapp.utilities.Driver;
 import org.testng.annotations.Test;
 
 public class TC_02 {
-//    1_Go to https://pearlymarket.com/
-//            2_User should SIGN IN
-//3_Dashboard and options below should appear
-//4_Click on Addresses
-//5_Then click on Add below Shipping Address.
-//6_Red dotted fields will be leaved
-//7_Then click on Add below Shipping Address
-//8_Verify that required parts should be visible.
+
 @Test
 public void US13_TC01(){
 //        1_Go to https://pearlymarket.com/

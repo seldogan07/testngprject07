@@ -10,13 +10,7 @@ import com.myapp.utilities.ReusableMethods;
 import org.testng.annotations.Test;
 
 public class TC_02 {
-//    1_Go to https://pearlymarket.com/
-//    2_User should SIGN IN
-//    3_Click on Sign Out button
-//    4_Dashboard and options below should appear
-//    5_Click on Addresses
-//    6_Then click on Add below Billing Address
-//    7_The registered email must be filled automatically.
+
 
     @Test
     public void US12_TC02(){
@@ -50,7 +44,13 @@ public class TC_02 {
 //        String billingEmail=ConfigReader.getProperty("billing_email").toString();
         addressesPage.billingEmail.getText().contains("@");
 
+        //8_Red dotted fields must be filled.
 
-}
+        addressesPage.billingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
+        addressesPage.billingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
+
+
+
+    }
 
 }
