@@ -21,13 +21,13 @@ public class TC_03 {
         My_Account_2Page my_account_2Page = new My_Account_2Page();
         AddressesPage addressesPage = new AddressesPage();
 
-//        2_Click on Sign in
+//        2_Click on Sign in.
         pearlyMarketHomePage.homePageSignInLink.click();
 
-//        3_User should enter Email
+//        3_User should enter Email.
         my_account_2Page.userName.sendKeys("isam.young@fullangle.org");
 
-//        4_User should enter the password
+//        4_User should enter the password.
         my_account_2Page.password.sendKeys("password123");
 
 //        5_Click on SIGN In button
@@ -36,16 +36,16 @@ public class TC_03 {
 //        6_Click on Sign Out button
         pearlyMarketHomePage.signOutLink.click();
 
-//        7_‘My Account’ on the page should appear
+//        7_‘My Account’ on the page should appear.
         pearlyMarketMyAccountPage.myAccountText.isDisplayed();
 
-//        8_Click on Addresses
+//        8_Click on Addresses.
         pearlyMarketMyAccountPage.addressesLink.click();
 
-//        9_Then click on Add below Billing Address
+//        9_Then click on Add below Billing Address.
         addressesPage.addBillingButton.click();
 
-//        10_Red dotted fields must be filled
+//        10_Red dotted fields must be filled.
         addressesPage.billingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
         addressesPage.billingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
 //        ReusableMethods.selectByVisibleText(addressesPage.billingCountry,"Iceland");
@@ -60,7 +60,5 @@ public class TC_03 {
 //        12_Address should be added.
         addressesPage.editBillingAddress.isDisplayed();
 
-
-}
-
+   }
 }
