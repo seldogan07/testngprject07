@@ -22,22 +22,22 @@ public class TC_02 {
         My_Account_2Page my_account_2Page = new My_Account_2Page();
         AddressesPage addressesPage = new AddressesPage();
 
-//        2_Click on Sign in
+//        2_Click on Sign in.
         pearlyMarketHomePage.homePageSignInLink.click();
         my_account_2Page.userName.sendKeys("isam.young@fullangle.org");
         my_account_2Page.password.sendKeys("Meyra123!");
         my_account_2Page.signIn.click();
 
-//        3_Click on Sign Out button
+//        3_Click on Sign Out button.
         pearlyMarketHomePage.signOutLink.click();
 
-//        4_Dashboard and options below should appear
+//        4_Dashboard and options below should appear.
         pearlyMarketMyAccountPage.myAccountText.isDisplayed();
 
-//        5_Click on Addresses
+//        5_Click on Addresses.
         pearlyMarketMyAccountPage.addressesLink.click();
 
-//        6_Then click on Add below Billing Address
+//        6_Then click on Add below Billing Address.
         addressesPage.addBillingButton.click();
 
 //        7_The registered email must be filled automatically.
@@ -48,7 +48,6 @@ public class TC_02 {
 
         addressesPage.billingFirstName.sendKeys(ConfigReader.getProperty("billing_firstname"));
         addressesPage.billingLastName.sendKeys(ConfigReader.getProperty("billing_lastname"));
-
 
 
     }
