@@ -76,13 +76,7 @@ public class AddressesPage {
     @FindBy(xpath = "//li[@data-id='shipping_postcode']")
     public WebElement postCodeRequiredText;
 
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//a[@href='https://pearlymarket.com/my-account-2/'])[1]")
+    public WebElement myAccountDown;
 
 }
