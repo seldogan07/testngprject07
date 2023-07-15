@@ -42,7 +42,6 @@ public class PearlyMarketHomePage {
     @FindBy(xpath = "//button[@name='register']")// for SIGN UP
     public WebElement signUpButton;
 
-
     // *********************************************
     @FindBy(xpath = "/html/body/div[2]/footer/div/section[2]/div/div[2]/div/section/div/div[2]/div/div[2]/div/nav/ul/li[4]")
     public WebElement myAccountButton;
@@ -127,6 +126,5 @@ public class PearlyMarketHomePage {
     public WebElement couponCodeGet;
     @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[5]/a/span[2]")
     public WebElement couponProductName;
-
 
 }
