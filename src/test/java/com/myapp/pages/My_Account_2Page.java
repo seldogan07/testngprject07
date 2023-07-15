@@ -21,5 +21,13 @@ public class My_Account_2Page {
     @FindBy(partialLinkText = "Store Manager")
     public WebElement storeManagerButton;
 
+    @FindBy(xpath = "//*[@value='Sign In']")
+    public WebElement signIn2;
+
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement signOut;
+    @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
+    public WebElement twoMyAccount;
+
 
 }
